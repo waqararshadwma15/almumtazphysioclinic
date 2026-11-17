@@ -1,0 +1,46 @@
+{
+"01-neck-pain-mobile": {
+ "illo":"neck",
+ "hook":["Mobile dekhte dekhte","GARDAN","mein dard?"], "hookUr":"موبائل دیکھتے دیکھتے گردن میں درد؟",
+ "explainTag":"Wajah kya hai?",
+ "explain":["Sar aage <b>jhukane</b> se gardan par <b>bojh</b> barhta hai","سر آگے جھکانے سے گردن پر بوجھ بڑھتا ہے","Bending your head forward adds load on your neck"],
+ "tips":[
+  {"icon":"📱","ru":"Phone ko <b>aankhon ki seedh</b> mein rakhein","ur":"فون کو آنکھوں کی سیدھ میں رکھیں","en":"Hold your phone at eye level"},
+  {"icon":"⏱️","ru":"Har <b>20–30 minute</b> baad break lein","ur":"ہر بیس سے تیس منٹ بعد وقفہ لیں","en":"Take a short break every 20–30 minutes"},
+  {"icon":"🪑","ru":"Kandhay <b>dheelay</b>, kamar <b>seedhi</b> rakhein","ur":"کندھے ڈھیلے، کمر سیدھی رکھیں","en":"Relax your shoulders and sit upright"}],
+ "warn":["Dard barqarar rahe ya haathon mein <b>sunn-pan</b> ho?","درد برقرار رہے یا ہاتھوں میں سن پن ہو؟","Physiotherapist se mashwara karein"]
+},
+"02-back-pain-sitting": {
+ "illo":"back","hookImg":"p-back.jpg","hookPos":"center 40%",
+ "hook":["Ghanton baith kar","KAMAR","mein dard?"], "hookUr":"گھنٹوں بیٹھ کر کمر میں درد؟",
+ "explainTag":"Ghalat vs Sahi",
+ "explain":["Jhuk kar baithne se kamar par <b>dabao</b> barhta hai","جھک کر بیٹھنے سے کمر پر دباؤ بڑھتا ہے","Slouching puts extra strain on your lower back"],
+ "tips":[
+  {"icon":"🪑","ru":"Kamar ko kursi ki <b>tek</b> se lagayein","ur":"کمر کو کرسی کی ٹیک سے لگائیں","en":"Keep your lower back supported"},
+  {"icon":"🚶","ru":"Har <b>30 minute</b> baad uth kar chalein","ur":"ہر تیس منٹ بعد اٹھ کر چلیں","en":"Stand up and walk every 30 minutes"},
+  {"icon":"📦","ru":"Wazan uthate waqt <b>ghutne</b> moden","ur":"وزن اٹھاتے وقت گھٹنے موڑیں","en":"Bend your knees when lifting"}],
+ "warn":["Dard <b>tangon</b> tak jaye ya barqarar rahe?","درد ٹانگوں تک جائے یا برقرار رہے؟","Physiotherapist se mashwara karein"]
+},
+"03-knee-pain-stairs": {
+ "illo":"knee","hookImg":"treat-photo.jpg","hookPos":"42% center",
+ "hook":["Seerhiyan chadhte waqt","GHUTNON","mein dard?"], "hookUr":"سیڑھیاں چڑھتے وقت گھٹنوں میں درد؟",
+ "explainTag":"Kya karein?",
+ "explain":["Ghutnon ke ird-gird <b>pathon</b> ka mazboot hona zaroori hai","گھٹنوں کے اردگرد پٹھوں کا مضبوط ہونا ضروری ہے","Strong muscles around the knee help support it"],
+ "tips":[
+  {"icon":"⚖️","ru":"Wazan ko <b>control</b> mein rakhein","ur":"وزن کو کنٹرول میں رکھیں","en":"A healthy weight means less load on your knees"},
+  {"icon":"🚶","ru":"Roz <b>halki walk</b> karein","ur":"روزانہ ہلکی واک کریں","en":"Gentle daily walking keeps joints moving"},
+  {"icon":"📋","ru":"Sahi exercises <b>physiotherapist</b> se seekhein","ur":"درست ورزشیں فزیوتھراپسٹ سے سیکھیں","en":"Learn the right exercises from a physiotherapist"}],
+ "warn":["Ghutne mein <b>soojan</b> ya chalne mein mushkil?","گھٹنے میں سوجن یا چلنے میں مشکل؟","Der na karein, mashwara karein"]
+},
+"04-frozen-shoulder": {
+ "illo":"shoulder","hookImg":"p-upback.jpg","hookPos":"center 30%",
+ "hook":["Baazu upar uthane mein","MUSHKIL?","Kandhay mein akran?"], "hookUr":"بازو اوپر اٹھانے میں مشکل؟",
+ "explainTag":"Frozen Shoulder?",
+ "explain":["Dard aur <b>akran</b>, Frozen Shoulder ki alamat ho sakti hai","درد اور اکڑن، فروزن شولڈر کی علامت ہو سکتی ہے","Pain and stiffness can be signs of frozen shoulder"],
+ "tips":[
+  {"icon":"🩺","ru":"Dard ko <b>nazar-andaz</b> na karein","ur":"درد کو نظر انداز نہ کریں","en":"Don't ignore ongoing shoulder pain"},
+  {"icon":"🚫","ru":"<b>Zabardasti</b> ki exercise na karein","ur":"زبردستی کی ورزش نہ کریں","en":"Don't force painful movements"},
+  {"icon":"📋","ru":"Physiotherapist se <b>sahi exercises</b> seekhein","ur":"فزیوتھراپسٹ سے درست ورزشیں سیکھیں","en":"Learn guided exercises from a physiotherapist"}],
+ "warn":["Raat ko dard <b>barh</b> jaye ya baazu kamzor lage?","رات کو درد بڑھ جائے یا بازو کمزور لگے؟","Physiotherapist se mashwara karein"]
+}
+}
