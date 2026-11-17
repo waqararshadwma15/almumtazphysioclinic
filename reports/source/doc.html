@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Project Summary</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A2A35;--teal:#0E5E6F;--green:#1F6E3B;--lime:#6DBE45;--orange:#F28C28;--mint:#E8F5F4;--ink:#1d2b30;--mut:#5b6b70;--line:#d6e3e2}
+@page{size:A4;margin:16mm 15mm 18mm}
+*{box-sizing:border-box}
+body{font-family:Poppins,Arial,sans-serif;color:var(--ink);font-size:9.6pt;line-height:1.5;margin:0}
+h1,h2,h3{color:var(--navy);margin:0}
+h2{font-size:16pt;font-weight:700;margin:0 0 3mm;display:flex;align-items:center;gap:3mm}
+h2 .num{background:var(--teal);color:#fff;border-radius:50%;width:9mm;height:9mm;display:inline-flex;align-items:center;justify-content:center;font-size:11pt;flex:none}
+h3{font-size:11pt;font-weight:600;margin:4mm 0 1.5mm;color:var(--teal)}
+p{margin:0 0 2mm}
+.lead{color:var(--mut);margin-bottom:4mm}
+section{margin-bottom:8mm}
+.break{break-before:page}
+table{width:100%;border-collapse:collapse;font-size:8.6pt}
+th{background:var(--navy);color:#fff;text-align:left;font-weight:600;padding:2mm 2.2mm}
+td{padding:1.7mm 2.2mm;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f6faf9}
+tr{break-inside:avoid}
+td.n,td.c{text-align:center}
+.nw{white-space:nowrap}
+.status{display:inline-block;font-weight:600;font-size:7.8pt;padding:.6mm 2.4mm;border-radius:10px;white-space:nowrap}
+.s-done{background:#dff3d4;color:var(--green)}
+.s-wait{background:#fde9d4;color:#a2540a}
+.s-draft{background:var(--mint);color:var(--teal)}
+.s-hold{background:#eceff0;color:#56656a}
+.pill{font-size:7.4pt;font-weight:600;padding:.4mm 2mm;border-radius:8px;white-space:nowrap}
+.edu{background:var(--mint);color:var(--teal)}.spot{background:#e4f2dc;color:var(--green)}.trust{background:#e3e8f0;color:var(--navy)}.offer{background:#fde9d4;color:#a2540a}
+b.o{color:#c2650d}
+/* cover */
+.cover{height:257mm;display:flex;flex-direction:column;position:relative}
+.cover .band{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;border-radius:6mm;padding:16mm 14mm;margin-top:28mm;position:relative;overflow:hidden}
+.cover .band:after{content:"";position:absolute;right:-42mm;bottom:-42mm;width:80mm;height:80mm;border-radius:50%;border:10mm solid rgba(242,140,40,.85);opacity:.9}
+.cover .logo{display:flex;align-items:center;gap:5mm}
+.cover .logo img{width:30mm}
+.cover .logo .nm{font-size:20pt;font-weight:700;color:var(--navy);line-height:1.15}
+.cover .logo .tg{color:var(--teal);font-weight:500;font-size:11pt}
+.cover h1{color:#fff;font-size:28pt;line-height:1.15;font-weight:800;max-width:120mm;position:relative;z-index:1}
+.cover .sub{font-size:12pt;margin-top:4mm;opacity:.9;max-width:105mm;position:relative;z-index:1}
+.cover .meta{margin-top:10mm;display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;font-size:9.5pt}
+.cover .meta div span{display:block;color:var(--mut);font-size:8pt;text-transform:uppercase;letter-spacing:.06em}
+.cover .foot{margin-top:auto;border-top:3px solid var(--orange);padding-top:3mm;color:var(--mut);font-size:8.5pt}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:3mm 0 5mm}
+.stat{background:var(--mint);border-radius:3mm;padding:2.5mm 3.5mm;border-top:3px solid var(--teal)}
+.stat b{display:block;font-size:16pt;color:var(--navy);line-height:1.1}
+.stat span{font-size:8pt;color:var(--mut)}
+.stat.or{border-top-color:var(--orange)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.card{border:1px solid var(--line);border-radius:3mm;padding:4mm;break-inside:avoid}
+.card h3{margin-top:0}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm}
+.svc div{background:var(--mint);border-left:3px solid var(--lime);padding:1.8mm 2.5mm;border-radius:1.5mm;font-weight:500;font-size:8.8pt}
+.svc div small{display:block;color:var(--mut);font-weight:400;font-size:7.6pt}
+.note{background:#fff6ec;border-left:4px solid var(--orange);padding:3mm 4mm;border-radius:2mm;font-size:8.8pt;margin:3mm 0;break-inside:avoid}
+.funnel{display:flex;gap:1.5mm;margin:3mm 0 4mm}
+.funnel div{flex:1;background:var(--teal);color:#fff;text-align:center;font-size:7.8pt;font-weight:600;padding:2.5mm 1mm;clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%,8% 50%)}
+.funnel div:first-child{clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%)}
+.funnel div:nth-child(odd){background:var(--navy)}
+.funnel div:last-child{background:var(--orange)}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm}
+.pillar{border:1px solid var(--line);border-radius:3mm;padding:3.5mm;break-inside:avoid;border-top:3px solid var(--teal)}
+.pillar:nth-child(3n+2){border-top-color:var(--lime)}
+.pillar:nth-child(3n){border-top-color:var(--orange)}
+.pillar h3{margin:0 0 1mm;font-size:10pt}
+.pillar ul{margin:0;padding-left:4mm}
+.pillar li{margin-bottom:.6mm}
+.reels{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm}
+.reel{border:1px solid var(--line);border-radius:3mm;padding:3.5mm;break-inside:avoid}
+.reel .hd{margin-bottom:1.5mm}
+.reel .hd b{color:var(--navy);font-size:10pt}
+.reel .hd span{display:block;font-size:7.8pt;color:var(--mut)}
+.reel .hook{background:var(--navy);color:#fff;border-radius:2mm;padding:2mm 3mm;font-weight:600;font-size:8.8pt;margin-bottom:2mm}
+.reel ol{margin:0 0 1.5mm;padding-left:4.5mm;font-size:8.6pt}
+.reel .when{font-size:8.2pt;color:var(--teal)}
+.check{list-style:none;padding:0;margin:0}
+.check li{display:grid;grid-template-columns:5mm 1fr auto;gap:2mm;padding:1.3mm 0;font-size:8.8pt;border-bottom:1px solid var(--line);break-inside:avoid}
+.check li:before{content:"";width:3.6mm;height:3.6mm;border:1.5px solid var(--teal);border-radius:1mm;margin-top:.8mm}
+.check li em{font-style:normal;font-size:7.6pt;font-weight:600;color:#a2540a;background:#fde9d4;border-radius:8px;padding:.3mm 2mm;align-self:start;white-space:nowrap}
+.check li em.lo{background:#eceff0;color:#56656a}
+.check li small{display:block;color:var(--mut);font-size:8pt}
+.shots{break-inside:avoid;display:grid;grid-template-columns:2.6fr 1fr;gap:4mm;align-items:start}
+.shots figure{margin:0;border:1px solid var(--line);border-radius:2mm;overflow:hidden}
+.shots img{width:100%;display:block}
+.shots figcaption{font-size:7.6pt;color:var(--mut);padding:1.5mm 2.5mm;background:#f6faf9}
+.cal{font-size:7.9pt}.cal td{padding:1.2mm 1.6mm}
+.files td:first-child{font-family:ui-monospace,Menlo,monospace;font-size:7.8pt;color:var(--teal)}
+</style></head><body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="logo"><img src="clinic-logo.svg" alt=""><div><div class="nm">Al Mumtaz<br>Physiotherapy Clinic</div><div class="tg">Physiotherapy &amp; Rehabilitation</div></div></div>
+  <div class="band">
+    <h1>Digital Marketing Project Summary</h1>
+    <div class="sub">What has been built, where each platform stands, the growth plan, and what is still needed to go live.</div>
+  </div>
+  <div class="meta">
+    <div><span>Status as of</span>17 November 2026</div>
+    <div><span>Prepared for</span>Waqar (review) and Dr. Arshad Khan (medical approval)</div>
+    <div><span>Clinic location</span>Inside Al Mumtaz Hospital, Malir, Karachi</div>
+    <div><span>Document status</span>Draft for internal review. Nothing in it has been published as an ad.</div>
+  </div>
+  <div class="foot">Every fact in this document comes from details the clinic has confirmed. No fees, qualifications, testimonials or treatment results have been added, because none have been supplied.</div>
+</div>
+
+<!-- 1 SNAPSHOT + PLATFORMS -->
+<section class="break">
+  <h2><span class="num">1</span>Where things stand</h2>
+  <div class="stats">
+    <div class="stat"><b>1 of 6</b><span>platforms fully live (Facebook)</span></div>
+    <div class="stat"><b>20</b><span>posts planned, 23 Nov – 19 Dec</span></div>
+    <div class="stat"><b>4</b><span>faceless reels rendered and ready for review</span></div>
+    <div class="stat or"><b>15</b><span>posts waiting for Dr. Arshad's medical approval</span></div>
+  </div>
+  <table>
+    <tr><th style="width:24%">Platform</th><th style="width:20%">Status</th><th>What is done</th><th style="width:27%">Next step</th></tr>
+    <tr><td><b>Facebook Page</b></td><td><span class="status s-done">Live</span></td><td>Name "Al Mumtaz Physiotherapy Clinic", username <b>facebook.com/almumtazphysioclinic</b>, new bio (unverified claims removed), hours daily 11 AM – 11 PM, logo profile picture, teal cover, WhatsApp button.</td><td>Start posting from 23 Nov per the calendar.</td></tr>
+    <tr><td><b>Google Business Profile</b></td><td><span class="status s-wait">Awaiting verification</span></td><td>Profile created: category "Physical therapy clinic", hours, phone, WhatsApp link, Facebook link and description saved.</td><td>Waqar records Google's verification video. Then add services, logo, cover and extra categories.</td></tr>
+    <tr><td><b>Instagram</b></td><td><span class="status s-hold">On hold</span></td><td>No account created yet, by decision.</td><td>Create when ready; reuse the Facebook name, bio and visuals.</td></tr>
+    <tr><td><b>WhatsApp Business</b></td><td><span class="status s-draft">Drafts ready</span></td><td>Business name, description, greeting, away message and quick replies drafted.</td><td>Set up in the WhatsApp Business app on 0333-2156512.</td></tr>
+    <tr><td><b>LinkedIn Company Page</b></td><td><span class="status s-draft">Drafts ready</span></td><td>Name, URL, industry, tagline and About text drafted.</td><td>Needs organisation size and type, and Waqar's personal LinkedIn sign-in.</td></tr>
+    <tr><td><b>TikTok Business</b></td><td><span class="status s-draft">Drafts ready</span></td><td>Username @almumtazphysioclinic, name and bio drafted.</td><td>Create the account with the clinic email, then switch to Business.</td></tr>
+    <tr><td><b>Website</b></td><td><span class="status s-wait">Built, not live</span></td><td>One-page Next.js site with English and Urdu, 12 services, WhatsApp booking buttons. Lighthouse 96–100.</td><td>Needs real photos, Dr. Arshad's photo with consent, and a domain.</td></tr>
+  </table>
+  <h3 style="margin-top:3mm">Proof of work</h3>
+  <div class="shots">
+    <figure><img src="fb-page-live-2026-11-17.jpg" alt="" style="height:36mm;object-fit:cover;object-position:top"><figcaption>Facebook Page as live on 17 Nov 2026</figcaption></figure>
+    <figure><img src="mobile-top.png" alt="" style="height:36mm;object-fit:cover;object-position:top"><figcaption>Website (mobile view, not yet published)</figcaption></figure>
+  </div>
+</section>
+
+<!-- 2 CLINIC DETAILS -->
+<section class="break">
+  <h2><span class="num">2</span>Verified clinic details</h2>
+  <p class="lead">These details are used identically on every platform. Change them in one place and update all platforms together.</p>
+  <table>
+    <tr><th style="width:26%">Field</th><th>Value</th></tr>
+    <tr><td>Official name</td><td><b>Al Mumtaz Physiotherapy Clinic</b></td></tr>
+    <tr><td>Tagline</td><td>Physiotherapy &amp; Rehabilitation</td></tr>
+    <tr><td>Lead physiotherapist</td><td>Dr. Arshad Khan, Consultant Physiotherapist</td></tr>
+    <tr><td>Location</td><td>Inside Al Mumtaz Hospital, 25/243 Darakhshan Society (Kala Board Bus Stop), Malir, Karachi</td></tr>
+    <tr><td>Phone / WhatsApp</td><td>0333-2156512 (+92 333 2156512)</td></tr>
+    <tr><td>Email</td><td>physioammhospital@gmail.com</td></tr>
+    <tr><td>Hours</td><td>Open daily, 11:00 AM – 11:00 PM</td></tr>
+    <tr><td>Facebook</td><td>facebook.com/almumtazphysioclinic</td></tr>
+    <tr><td>Logo</td><td>Green figure logo (used as the Facebook profile picture)</td></tr>
+    <tr><td>Not yet provided</td><td>Fees and qualifications. They are left out everywhere until the clinic confirms them.</td></tr>
+  </table>
+  <div class="note"><b>Naming note:</b> Google Maps and the building sign show the hospital as "Al Mumtaz Medical Complex". All clinic materials say "Al Mumtaz Hospital", as chosen.</div>
+  <h3>The 12 verified services</h3>
+  <div class="svc">
+    <div>Neck Pain<small>Gardan ka dard</small></div>
+    <div>Back Pain<small>Kamar ka dard</small></div>
+    <div>Frozen Shoulder<small>Kandhe ki akran</small></div>
+    <div>Tennis Elbow<small>Kohni ka dard</small></div>
+    <div>Knee Pain<small>Ghutnon ka dard</small></div>
+    <div>Ankle Pain<small>Takhne ka dard</small></div>
+    <div>Joint Pain<small>Joron ka dard</small></div>
+    <div>Sports Injury<small>Khel ke dauran chot</small></div>
+    <div>Stroke Rehabilitation / Paralysis<small>Falij ke baad bahali</small></div>
+    <div>Facial Palsy<small>Chehre ka laqwa</small></div>
+    <div>Erb's Palsy<small>Bachon ke bazu ki kamzori</small></div>
+    <div>Cerebral Palsy (CP Child)<small>Bachon ki CP</small></div>
+  </div>
+  <p style="margin-top:2mm;font-size:8pt;color:var(--mut)">Roman Urdu names are from the website draft and still need a check by Dr. Arshad.</p>
+</section>
+
+<!-- 3 STRATEGY -->
+<section class="break">
+  <h2><span class="num">3</span>Patient growth strategy</h2>
+  <p class="lead">The goal is booked appointments, not likes. Every channel points to one action: a WhatsApp message to 0333-2156512. Each enquiry is then tracked until the patient visits.</p>
+  <div class="funnel"><div>Seen on Google / social</div><div>WhatsApp enquiry</div><div>Contacted</div><div>Appointment booked</div><div>Patient visited</div><div>Follow-up</div></div>
+  <div class="pillars">
+    <div class="pillar"><h3>1. Local Google presence</h3><ul><li>Verify the Google Business Profile so the clinic shows for "physiotherapist near me" in Malir.</li><li>Add services, real photos, logo and cover once verified.</li><li>Ask satisfied patients for genuine Google reviews (never written by us).</li></ul></div>
+    <div class="pillar"><h3>2. Consistent content, 4–5 posts a week</h3><ul><li>Mon, Tue, Thu, Fri, Sat at 8:30 PM PKT.</li><li>Mostly short educational reels in Roman Urdu and Urdu, faceless where possible.</li><li>Every post ends with WhatsApp number, location and hours.</li></ul></div>
+    <div class="pillar"><h3>3. Click-to-WhatsApp ads</h3><ul><li>Meta ads (Facebook and Instagram) that open a WhatsApp chat.</li><li>Radius of 5–8 km around the hospital.</li><li>Start with the best-performing reels; budget to be set by Waqar.</li><li>Judge by cost per enquiry and per booked patient.</li></ul></div>
+    <div class="pillar"><h3>4. WhatsApp enquiry tracking</h3><ul><li>Greeting, away message and quick replies so no enquiry waits.</li><li>Reply within 1 hour during clinic hours.</li><li>Log every enquiry: New → Contacted → Booked → Visited → Follow-up → Closed.</li><li>Collect only name, contact and the problem; no medical records in the tracker.</li></ul></div>
+    <div class="pillar"><h3>5. Referrals</h3><ul><li>Build links with doctors inside Al Mumtaz Hospital (orthopaedic, neurology, paediatrics).</li><li>Nearby GPs, gyms and sports clubs.</li><li>Record "How did you hear about us?" for every new patient.</li></ul></div>
+    <div class="pillar"><h3>6. Monthly review</h3><ul><li>Each Monday, fill the weekly results in the calendar's tracker sheet.</li><li>Monthly: enquiries, bookings, visits, ad spend, cost per patient.</li><li>Keep topics and ads that bring patients; drop the rest.</li></ul></div>
+  </div>
+  <div class="note"><b>Compliance:</b> no promises such as "cure" or "guaranteed relief", no patient faces without written consent, and every medical tip is approved by Dr. Arshad before it is posted.</div>
+</section>
+
+<!-- 4 CALENDAR -->
+<section class="break">
+  <h2><span class="num">4</span>Month-1 content calendar</h2>
+  <p class="lead">20 posts from 23 November to 19 December 2026, 8:30 PM PKT. Full captions, hashtags, Urdu text and shot plans are in <b>content/first-month-content-calendar.xlsx</b>.</p>
+  <div class="stats">
+    <div class="stat"><b>10</b><span>Educational (50%)</span></div>
+    <div class="stat"><b>4</b><span>Condition spotlights (20%)</span></div>
+    <div class="stat"><b>4 + 2</b><span>Trust (20%) + reminders (10%)</span></div>
+    <div class="stat or"><b>13</b><span>faceless videos</span></div>
+  </div>
+  <table class="cal">
+    <tr><th>#</th><th style="width:13%">Date</th><th style="width:15%">Pillar</th><th style="width:13%">Format</th><th style="width:16%">Service</th><th>Topic</th><th>Faceless</th><th>Dr. review</th></tr>
+    {{CAL}}
+  </table>
+  <p style="margin-top:2mm;font-size:8pt;color:var(--mut)">Weekly themes: Week 1 Introduce the clinic · Week 2 Everyday pain · Week 3 Children &amp; families · Week 4 Winter &amp; joints. Reels go to Facebook, Instagram and TikTok; images and carousels to Facebook and Instagram.</p>
+</section>
+
+<!-- 5 REELS -->
+<section class="break">
+  <h2><span class="num">5</span>Faceless reels, batch 1</h2>
+  <p class="lead">Four vertical videos (1080×1920, about 28.5 seconds, copyright-free background music) are rendered and saved in <b>videos/</b>. Each follows the same structure: hook, short explanation, 3 tips, when to see a physio, and an end card with logo, WhatsApp, location and hours, plus "General awareness only. Not a diagnosis."</p>
+  <div class="reels">
+    <div class="reel"><div class="hd"><b>01 · Neck pain from mobile use</b><span>Post 2 · Tue 24 Nov</span></div><div class="hook">Mobile dekhte dekhte GARDAN mein dard?</div><ol><li>Hold your phone at eye level</li><li>Take a short break every 20–30 minutes</li><li>Relax your shoulders and sit upright</li></ol><div class="when">See a physio if pain persists or there is numbness in the hands.</div></div>
+    <div class="reel"><div class="hd"><b>02 · Back pain from long sitting</b><span>Post 3 · Thu 26 Nov</span></div><div class="hook">Ghanton baith kar KAMAR mein dard?</div><ol><li>Keep your lower back supported</li><li>Stand up and walk every 30 minutes</li><li>Bend your knees when lifting</li></ol><div class="when">See a physio if pain spreads to the legs or persists.</div></div>
+    <div class="reel"><div class="hd"><b>04 · Frozen shoulder</b><span>Post 4 · Fri 27 Nov</span></div><div class="hook">Baazu upar uthane mein MUSHKIL? Kandhay mein akran?</div><ol><li>Don't ignore ongoing shoulder pain</li><li>Don't force painful movements</li><li>Learn guided exercises from a physiotherapist</li></ol><div class="when">See a physio if pain worsens at night or the arm feels weak.</div></div>
+    <div class="reel"><div class="hd"><b>03 · Knee pain on stairs</b><span>Post 5 · Sat 28 Nov</span></div><div class="hook">Seerhiyan chadhte waqt GHUTNON mein dard?</div><ol><li>A healthy weight means less load on your knees</li><li>Gentle daily walking keeps joints moving</li><li>Learn the right exercises from a physiotherapist</li></ol><div class="when">See a physio if there is swelling or difficulty walking.</div></div>
+  </div>
+  <h3>Dr. Arshad's review points for the reels</h3>
+  <ul class="check">
+    <li><span>Every tip and "when to see a physio" line is accurate and safe as general advice.</span></li>
+    <li><span>The "20–30 minutes" (neck) and "30 minutes" (back) break intervals are acceptable.</span></li>
+    <li><span>The frozen shoulder wording ("can be a sign") is suitably cautious.</span></li>
+    <li><span>The Urdu spelling on screen is correct.</span></li>
+  </ul>
+  <p style="margin-top:2mm;font-size:8pt;color:var(--mut)">Full on-screen text in Roman Urdu, Urdu and English, captions and hashtags: videos/scripts-and-captions.md.</p>
+</section>
+
+<!-- 6 CHECKLIST -->
+<section class="break">
+  <h2><span class="num">6</span>What is still needed</h2>
+  <p class="lead">Content can start on 23 November once the first five posts are approved. Items marked "Before launch" block that date.</p>
+  <div class="grid2">
+    <div class="card"><h3>From Waqar</h3><ul class="check">
+      <li><span>Approve this summary and confirm the green figure logo is official for all platforms</span><em>Before launch</em></li>
+      <li><span>Record Google's business verification video<small>Signboard, inside of the clinic, and proof you manage it</small></span><em>Before launch</em></li>
+      <li><span>Set up WhatsApp Business on 0333-2156512<small>Use the drafted name, greeting, away message and quick replies</small></span><em>Before launch</em></li>
+      <li><span>Set a monthly ad budget for Click-to-WhatsApp ads</span><em class="lo">Week 2</em></li>
+      <li><span>Confirm fees, and whether they can be published</span><em class="lo">When ready</em></li>
+      <li><span>Choose and buy the website domain, and review the website</span><em class="lo">When ready</em></li>
+      <li><span>Create the Instagram account (currently on hold)</span><em class="lo">When ready</em></li>
+      <li><span>LinkedIn: sign in, give organisation size and type, tick authorised representative</span><em class="lo">When ready</em></li>
+      <li><span>TikTok: create the account with the clinic email and switch to Business</span><em class="lo">When ready</em></li>
+    </ul></div>
+    <div class="card"><h3>From Dr. Arshad Khan</h3><ul class="check">
+      <li><span>Approve the 4 reels (review points in section 5)</span><em>Before launch</em></li>
+      <li><span>Approve medical wording in the other 11 posts needing review<small>Posts 7, 8, 9, 11, 12, 13, 14, 15, 16, 18, 19</small></span><em class="lo">A week before each</em></li>
+      <li><span>Confirm the "first visit" steps match the clinic (post 13)</span><em class="lo">By 10 Dec</em></li>
+      <li><span>Professional photo and written consent to use it<small>Post 17 and the website</small></span><em class="lo">By 15 Dec</em></li>
+      <li><span>Clinic walkthrough footage with no patients in frame (post 6)</span><em class="lo">By 30 Nov</em></li>
+      <li><span>Real photos of the treatment room for Google and the website</span><em class="lo">When ready</em></li>
+      <li><span>Check the Roman Urdu service names and Urdu spelling</span><em class="lo">When ready</em></li>
+      <li><span>Qualifications, only if he wants them shown publicly</span><em class="lo">Optional</em></li>
+    </ul></div>
+  </div>
+  <h3>Where everything is saved</h3>
+  <table class="files">
+    <tr><th style="width:42%">Project folder</th><th>Contents</th></tr>
+    <tr><td>branding/</td><td>Logo, profile picture, Facebook cover, intro post, poster draft and editable sources</td></tr>
+    <tr><td>content/first-month-content-calendar.xlsx</td><td>20-post calendar with captions, hashtags, review status and weekly results tracker</td></tr>
+    <tr><td>videos/</td><td>4 rendered reels, scripts and captions, editable sources</td></tr>
+    <tr><td>website/</td><td>Website code, zip, screenshots and deploy guide (README)</td></tr>
+    <tr><td>Phase 2 profile drafts (online doc)</td><td>Google, WhatsApp Business, LinkedIn and TikTok texts: claude.ai/artifact/MgK8XymWJm1F1GRgn6FMxQ</td></tr>
+  </table>
+</section>
+</body></html>
