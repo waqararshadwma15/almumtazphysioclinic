@@ -6,7 +6,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import HeroCarousel, { type Slide } from "@/components/HeroCarousel";
 import {
   ServiceIcon, WhatsAppIcon, PinIcon, ClockIcon, PhoneIcon, MailIcon,
-  HospitalIcon, UserIcon, FamilyIcon, FacebookIcon,
+  HospitalIcon, UserIcon, FamilyIcon, FacebookIcon, InstagramIcon,
 } from "@/components/Icons";
 import { FaqList } from "@/components/Chrome";
 import { clinic, services, serviceUrl, telLink, mapsLink, mapsEmbed } from "@/lib/site";
@@ -279,6 +279,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
             <ul className="contact-list">
               <li><MailIcon /> <a href={`mailto:${clinic.email}`} dir="ltr">{clinic.email}</a></li>
               <li><FacebookIcon /> <a href={clinic.facebook} target="_blank" rel="noopener" dir="ltr">facebook.com/almumtazphysioclinic</a></li>
+              <li><InstagramIcon /> <a href={clinic.instagram} target="_blank" rel="noopener" dir="ltr">instagram.com/almumtazphysioclinic</a></li>
             </ul>
           </div>
         </section>

@@ -19,6 +19,8 @@ export function GET() {
 - Phone: ${clinic.phoneIntl}
 - Email: ${clinic.email}
 - Facebook: ${clinic.facebook}
+- Instagram: ${clinic.instagram}
+- Website: ${SITE_URL}/
 - Fees: not published; ask on WhatsApp
 - Languages: English (${SITE_URL}/) and Urdu (${SITE_URL}/ur)
 

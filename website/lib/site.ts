@@ -17,6 +17,7 @@ export const clinic = {
   whatsappNumber: "923332156512",
   email: "physioammhospital@gmail.com",
   facebook: "https://www.facebook.com/almumtazphysioclinic",
+  instagram: "https://www.instagram.com/almumtazphysioclinic",
   address: {
     line1: "Inside Al Mumtaz Hospital",
     street: "25/243, Darakhshan Society (Kala Board Bus Stop)",
@@ -31,8 +32,8 @@ export const clinic = {
   // Map coordinates for schema. Left empty until confirmed from the clinic's
   // own Google Business Profile pin, e.g. { lat: 24.89, lng: 67.19 }.
   geo: null as null | { lat: number; lng: number },
-  // Add Instagram, TikTok, LinkedIn and Google Business Profile links here when live.
-  sameAs: ["https://www.facebook.com/almumtazphysioclinic"],
+  // Add TikTok, LinkedIn and Google Business Profile links here when live.
+  sameAs: ["https://www.facebook.com/almumtazphysioclinic", "https://www.instagram.com/almumtazphysioclinic"],
 };
 
 export const fullAddress = `${clinic.address.line1}, ${clinic.address.street}, ${clinic.address.area}, ${clinic.address.city}`;
