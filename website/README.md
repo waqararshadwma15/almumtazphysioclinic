@@ -38,7 +38,18 @@ Set `NEXT_PUBLIC_SITE_URL` in Vercel (or change the fallback in `lib/site.ts`) w
   `pip install fonttools uharfbuzz && python3 tools/urdu_svg.py "<path to Jameel Noori Nastaleeq Regular.ttf>" tools/phrases.json app/urdu.json`
 - `tools/make-icons-og.js` regenerates the app icons and `public/og.jpg` share image (needs Playwright).
 
+## Urdu version and animations
+- `/` is English, `/ur` is the full Urdu page (RTL, Jameel Noori Nastaleeq, loaded only on `/ur`). Both pages share `components/HomeView.tsx`; all copy is in `lib/i18n.ts`.
+- hreflang alternates (`en`, `ur`, `x-default`) are set in `app/layout.tsx` and `app/ur/page.tsx`, and both URLs are in the sitemap.
+- Animations live in `app/motion.css` and the tiny `components/Motion.tsx` (scroll reveal, count-up, header shadow). All motion stops under the visitor's "reduce motion" setting, and content stays visible without JavaScript.
+- Lighthouse mobile (local): English 95, Urdu 93–95 performance; accessibility, best practices and SEO 100 on both.
+- **Urdu font:** `app/fonts/jnn-subset.woff2` is Jameel Noori Nastaleeq cut down to only the glyphs the Urdu page uses (~70 KB instead of 10 MB).
+  **Whenever Urdu text in `lib/i18n.ts` or `app/ur/page.tsx` changes, rebuild it**, or new words show in a fallback font:
+  `pip install fonttools brotli uharfbuzz && python3 tools/urdu_font.py "<path to Jameel Noori Nastaleeq Regular.ttf>"`
+  The font is freeware ("Free of charge for Urdu lovers") with no formal web licence; its embedding flag allows view-only embedding.
+
 ## Waiting on the clinic (do not invent)
+- Urdu medical wording in `lib/i18n.ts` (service names, hero text): to be checked by Dr. Arshad Khan before launch.
 - Service summaries (`lib/site.ts`) and FAQ answers (`lib/faq.ts`): Dr. Arshad to review the wording before launch.
 - Map coordinates: set `clinic.geo` in `lib/site.ts` once the Google Business Profile pin is confirmed.
 - Dr. Arshad Khan's photo (with consent) to replace the "AK" initials, and his qualifications / experience if he wants them shown.

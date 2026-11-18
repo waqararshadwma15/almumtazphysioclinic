@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import { SITE_URL, clinic } from "@/lib/site";
 import "./globals.css";
+import "./motion.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
     title,
     description,
     locale: "en_PK",
+    alternateLocale: ["ur_PK"],
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: clinic.name }],
   },
   twitter: { card: "summary_large_image", title, description, images: ["/og.jpg"] },
@@ -53,8 +55,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-PK" className={poppins.variable}>
-      <body>{children}</body>
+    <html lang="en-PK" className={poppins.variable} suppressHydrationWarning>
+      <body>
+        {/* Lets CSS hide scroll-reveal content only when JavaScript can show it again. */}
+        <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add("js")` }} />
+        {children}
+      </body>
     </html>
   );
 }

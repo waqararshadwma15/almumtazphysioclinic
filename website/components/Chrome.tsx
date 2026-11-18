@@ -31,6 +31,7 @@ export function Header() {
             <Link href="/#faq">FAQ</Link>
             <Link href="/#contact">Contact</Link>
           </nav>
+          <a className="lang-switch" href="/ur" hrefLang="ur" lang="ur" aria-label="اردو میں دیکھیں (View in Urdu)">اردو</a>
           <a className="btn btn-wa btn-sm" href={waLink()} target="_blank" rel="noopener" aria-label="Book on WhatsApp">
             <WhatsAppIcon size={18} /> <span>Book</span>
           </a>

@@ -20,6 +20,7 @@ export function GET() {
 - Email: ${clinic.email}
 - Facebook: ${clinic.facebook}
 - Fees: not published; ask on WhatsApp
+- Languages: English (${SITE_URL}/) and Urdu (${SITE_URL}/ur)
 
 ## Services
 ${services.map((s) => `- [${s.heading}](${SITE_URL}${serviceUrl(s)}): ${s.summary}`).join("\n")}
