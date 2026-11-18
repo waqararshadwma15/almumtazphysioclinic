@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Urdu from "@/components/Urdu";
 import Motion from "@/components/Motion";
+import ThemeToggle from "@/components/ThemeToggle";
+import HeroCarousel, { type Slide } from "@/components/HeroCarousel";
 import {
   ServiceIcon, WhatsAppIcon, PinIcon, ClockIcon, PhoneIcon, MailIcon,
   HospitalIcon, UserIcon, FamilyIcon, FacebookIcon,
@@ -10,6 +12,16 @@ import { FaqList } from "@/components/Chrome";
 import { clinic, services, serviceUrl, telLink, mapsLink, mapsEmbed } from "@/lib/site";
 import { homeFaqs } from "@/lib/faq";
 import { dict, waLinkFor, type Lang } from "@/lib/i18n";
+
+// Illustrative photos (not taken at the clinic). Replace with real clinic photos when available.
+const heroSlides = (t: (typeof dict)["en"]): Slide[] => [
+  { src: "/hero-treatment.jpg", alt: t.heroAlt, width: 1500, height: 656, position: "55% 50%" },
+  { src: "/hero/knee.jpg", alt: t.heroAlts[0], width: 1200, height: 800, position: "50% 20%" },
+  { src: "/hero/upper-back.jpg", alt: t.heroAlts[1], width: 506, height: 900, position: "50% 45%" },
+  { src: "/hero/back.jpg", alt: t.heroAlts[2], width: 600, height: 900, position: "50% 40%" },
+  { src: "/hero/hip.jpg", alt: t.heroAlts[3], width: 600, height: 900, position: "50% 45%" },
+  { src: "/hero/arm.jpg", alt: t.heroAlts[4], width: 467, height: 900, position: "50% 55%" },
+];
 
 const whyIcons = [HospitalIcon, ClockIcon, UserIcon, FamilyIcon, WhatsAppIcon];
 
@@ -45,6 +57,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
             {!ur && <a href="#faq">FAQ</a>}
             <a href="#contact">{t.nav.contact}</a>
           </nav>
+          <ThemeToggle labels={t.theme} />
           <a className="lang-switch" href={t.switchHref} hrefLang={ur ? "en" : "ur"} lang={ur ? "en" : "ur"} aria-label={t.switchAria}>
             {t.switchLabel}
           </a>
@@ -85,12 +98,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
             </div>
             <div className="hero-media">
               <div className="hero-img">
-                <Image
-                  src="/hero-treatment.jpg"
-                  alt={t.heroAlt}
-                  width={1500} height={656} priority
-                  sizes="(max-width: 900px) 100vw, 46vw"
-                />
+                <HeroCarousel slides={heroSlides(t)} rtl={ur} labels={t.carousel} />
               </div>
               <div className="float-card fc-1" aria-hidden="true">
                 <span className="fc-ic"><ClockIcon /></span>
