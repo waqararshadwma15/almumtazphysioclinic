@@ -40,7 +40,7 @@
   transition: background .2s, border-color .2s, color .2s;
 }
 .lang-switch:hover { background: var(--mint); border-color: var(--teal); }
-.lang-switch:lang(ur) { font-family: var(--font-urdu), "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Segoe UI", sans-serif; font-size: 1rem; padding-top: 2px; }
+.lang-switch:lang(ur) { font-family: var(--font-urdu), "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", "Segoe UI", sans-serif; font-size: 1rem; padding-top: 2px; }
 .lang-switch:lang(en) { font-family: var(--font-poppins), system-ui, sans-serif; letter-spacing: 0; }
 
 /* ---------- Buttons ---------- */
@@ -236,19 +236,19 @@
 /* ---------- Urdu (RTL) ---------- */
 .ltr { direction: ltr; unicode-bidi: isolate; font-family: var(--font-poppins), system-ui, sans-serif; }
 .page-ur {
-  font-family: var(--font-urdu), "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
-  line-height: 2.15; font-size: 17px;
+  font-family: var(--font-urdu), "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
+  line-height: 1.6; font-size: 17px;
 }
 .page-ur *, .page-ur *::before, .page-ur *::after { letter-spacing: 0 !important; } /* letter-spacing breaks Urdu letter joining */
-.page-ur h1, .page-ur h2, .page-ur h3 { line-height: 1.9; font-weight: 700; }
+.page-ur h1, .page-ur h2, .page-ur h3 { line-height: 1.55; font-weight: 700; }
 .page-ur h2 { font-size: clamp(1.55rem, 3vw, 2.15rem); }
 .page-ur .hero h1 { font-size: clamp(1.9rem, 4.2vw, 3rem); margin-top: .3em; }
 .page-ur .hero-title .line { overflow: visible; padding: 0; margin: 0; }
 .page-ur .hero-title .line > span { animation-name: up-noclip; }
 @keyframes up-noclip { from { transform: translateY(24px); } to { transform: none; } }
 .page-ur .kicker { text-transform: none; font-size: .95rem; }
-.page-ur .lead { font-size: 1.05rem; line-height: 2.2; }
-.page-ur .btn { line-height: 1.9; padding-top: .45em; padding-bottom: .45em; }
+.page-ur .lead { font-size: 1.05rem; line-height: 2; }
+.page-ur .btn { line-height: 1.7; padding-top: .45em; padding-bottom: .45em; }
 .page-ur .btn-lg { padding-top: .55em; padding-bottom: .55em; }
 .page-ur .btn svg { flex: none; }
 .page-ur .brand { margin-right: 0; margin-left: auto; }
@@ -320,3 +320,4 @@ body { overflow-x: clip; }
 @media (max-width: 760px) {
   .hero-media, .hero-img img { animation: none; }
 }
+.page-ur .doc-avatar { font-family: var(--font-poppins), system-ui, sans-serif; }

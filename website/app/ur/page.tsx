@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Noto_Nastaliq_Urdu } from "next/font/google";
+import localFont from "next/font/local";
 import HomeView from "@/components/HomeView";
 import { clinic } from "@/lib/site";
 
-// Google's Noto Nastaliq Urdu, self-hosted by Next.js and loaded only on /ur.
-const nastaliq = Noto_Nastaliq_Urdu({
-  subsets: ["arabic"],
-  weight: ["400", "700"],
+// Jameel Noori Nastaleeq, cut down to only the glyphs this page uses (~70 KB instead of 10 MB).
+// Rebuild with tools/urdu_font.py whenever the Urdu text changes.
+const nastaliq = localFont({
+  src: "../fonts/jnn-subset.woff2",
   display: "swap",
   variable: "--font-urdu",
   preload: true,
+  // Jameel's letters are drawn small for their em size; scale them up to sit well with Poppins.
+  declarations: [{ prop: "size-adjust", value: "145%" }],
+  fallback: ["Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", "Urdu Typesetting", "serif"],
 });
 
 const title = "الممتاز فزیوتھراپی کلینک | ملیر، کراچی میں فزیوتھراپی";
