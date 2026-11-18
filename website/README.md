@@ -25,7 +25,14 @@ npm run build && npm start
 - `lib/site.ts` – all clinic details (name, phone, WhatsApp, address, hours, services). Edit here only.
 - `app/page.tsx` – the page sections. `app/globals.css` – styles and brand colours.
 - `app/layout.tsx` – SEO metadata. `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts`.
-- Local business schema (JSON-LD, `MedicalClinic` + `Physiotherapy`) is in `app/page.tsx`.
+- `lib/schema.ts` – all JSON-LD (clinic, doctor, website, FAQ, service pages, breadcrumbs).
+- `lib/faq.ts` – FAQ questions and answers (homepage and per service). Shown on the page and in FAQ schema.
+- `app/services/[slug]/page.tsx` – one page per service (12), generated from `services` in `lib/site.ts`.
+- `app/llms.txt/route.ts` – `/llms.txt` summary for AI assistants, generated from `lib/site.ts`.
+
+## Site address (one setting)
+`SITE_URL` in `lib/site.ts` drives canonical URLs, sitemap, robots, llms.txt, Open Graph and schema.
+Set `NEXT_PUBLIC_SITE_URL` in Vercel (or change the fallback in `lib/site.ts`) when the final name is chosen.
 - Urdu text uses Jameel Noori Nastaleeq, pre-shaped into SVG (`app/urdu.json`) because the font file is 10 MB.
   To change Urdu text: edit `tools/phrases.json`, then
   `pip install fonttools uharfbuzz && python3 tools/urdu_svg.py "<path to Jameel Noori Nastaleeq Regular.ttf>" tools/phrases.json app/urdu.json`
@@ -43,6 +50,8 @@ npm run build && npm start
 
 ## Waiting on the clinic (do not invent)
 - Urdu medical wording in `lib/i18n.ts` (service names, hero text): to be checked by Dr. Arshad Khan before launch.
+- Service summaries (`lib/site.ts`) and FAQ answers (`lib/faq.ts`): Dr. Arshad to review the wording before launch.
+- Map coordinates: set `clinic.geo` in `lib/site.ts` once the Google Business Profile pin is confirmed.
 - Dr. Arshad Khan's photo (with consent) to replace the "AK" initials, and his qualifications / experience if he wants them shown.
 - Real clinic photos to replace `public/hero-treatment.jpg` (currently an illustrative image, not the clinic).
 - Roman Urdu service names under each service: to be checked by Dr. Arshad.

@@ -53,12 +53,13 @@
 .btn:hover::before { transform: translateX(120%); }
 .btn:hover { transform: translateY(-2px); }
 .btn-wa:hover { box-shadow: 0 12px 28px rgba(14, 122, 67, .38); }
-.btn-pulse { overflow: visible; }
-.btn-pulse::after {
-  content: ""; position: absolute; inset: -2px; border-radius: inherit; z-index: -2;
-  box-shadow: 0 0 0 0 rgba(37, 211, 102, .55); animation: pulse-ring 2.4s ease-out infinite;
+/* Pulse uses the button's own shadow, so the hover shine stays clipped inside the pill. */
+.btn-pulse { animation: pulse-btn 2.4s ease-out infinite; }
+.btn-pulse:hover { animation: none; }
+@keyframes pulse-btn {
+  0% { box-shadow: 0 4px 14px rgba(14, 122, 67, .3), 0 0 0 0 rgba(37, 211, 102, .5); }
+  70%, 100% { box-shadow: 0 4px 14px rgba(14, 122, 67, .3), 0 0 0 16px rgba(37, 211, 102, 0); }
 }
-.btn-pulse::before { border-radius: inherit; overflow: hidden; }
 @keyframes pulse-ring {
   0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .5); }
   70%, 100% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
@@ -177,8 +178,8 @@
 
 /* ---------- Steps ---------- */
 .section-steps { background: linear-gradient(180deg, #fff, #F5FBFA); padding-top: 24px; }
-.steps { list-style: none; margin: 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
-.steps::before {
+.book-steps { list-style: none; margin: 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
+.book-steps::before {
   content: ""; position: absolute; top: 34px; left: 16%; right: 16%; height: 2px;
   background: repeating-linear-gradient(90deg, var(--teal) 0 8px, transparent 8px 16px); opacity: .35;
 }
@@ -286,8 +287,8 @@
   .stat { padding: 18px 8px; border-radius: 16px; }
   .stat-l { font-size: .82rem; line-height: 1.35; }
   .page-ur .stat-l { line-height: 1.8; }
-  .steps { grid-template-columns: 1fr; gap: 26px; }
-  .steps::before { top: 34px; bottom: 34px; left: 50%; right: auto; width: 2px; height: auto; background: repeating-linear-gradient(180deg, var(--teal) 0 8px, transparent 8px 16px); display: none; }
+  .book-steps { grid-template-columns: 1fr; gap: 26px; }
+  .book-steps::before { top: 34px; bottom: 34px; left: 50%; right: auto; width: 2px; height: auto; background: repeating-linear-gradient(180deg, var(--teal) 0 8px, transparent 8px 16px); display: none; }
   .step { display: grid; grid-template-columns: 56px 1fr; column-gap: 16px; text-align: start; align-items: center; }
   .step-n { width: 56px; height: 56px; margin: 0; grid-row: span 2; font-size: 1.25rem; box-shadow: 0 10px 22px rgba(14, 94, 111, .25); }
   .step h3 { margin: 0; }

@@ -1,11 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 import Urdu from "@/components/Urdu";
 import Motion from "@/components/Motion";
 import {
   ServiceIcon, WhatsAppIcon, PinIcon, ClockIcon, PhoneIcon, MailIcon,
   HospitalIcon, UserIcon, FamilyIcon, FacebookIcon,
 } from "@/components/Icons";
-import { clinic, services, telLink, mapsLink, mapsEmbed } from "@/lib/site";
+import { FaqList } from "@/components/Chrome";
+import { clinic, services, serviceUrl, telLink, mapsLink, mapsEmbed } from "@/lib/site";
+import { homeFaqs } from "@/lib/faq";
 import { dict, waLinkFor, type Lang } from "@/lib/i18n";
 
 const whyIcons = [HospitalIcon, ClockIcon, UserIcon, FamilyIcon, WhatsAppIcon];
@@ -39,6 +42,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
             <a href="#services">{t.nav.services}</a>
             <a href="#doctor">{t.nav.doctor}</a>
             <a href="#location">{t.nav.location}</a>
+            {!ur && <a href="#faq">FAQ</a>}
             <a href="#contact">{t.nav.contact}</a>
           </nav>
           <a className="lang-switch" href={t.switchHref} hrefLang={ur ? "en" : "ur"} lang={ur ? "en" : "ur"} aria-label={t.switchAria}>
@@ -137,18 +141,26 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <p className="muted">{t.svcNote}</p>
             </div>
             <ul className="grid-services">
-              {services.map((s, i) => (
-                <li key={s.name} className="reveal" style={{ ["--i" as string]: i % 3 }}>
-                  <a className="svc" href={wa(s.name)} target="_blank" rel="noopener">
+              {services.map((s, i) => {
+                const inner = (
+                  <>
                     <span className="svc-ic"><ServiceIcon name={s.icon} /></span>
                     <span className="svc-txt">
                       <strong>{t.serviceName(s.name)}</strong>
                       <span lang={ur ? "en" : undefined} dir={ur ? "ltr" : undefined}>{t.serviceSub(s.name)}</span>
                     </span>
                     <span className="svc-go" aria-hidden="true">{ur ? "←" : "→"}</span>
-                  </a>
-                </li>
-              ))}
+                  </>
+                );
+                return (
+                  <li key={s.slug} className="reveal" style={{ ["--i" as string]: i % 3 }}>
+                    {/* English cards open the service page; Urdu cards go straight to WhatsApp (service pages are English only). */}
+                    {ur
+                      ? <a className="svc" href={wa(s.name)} target="_blank" rel="noopener">{inner}</a>
+                      : <Link className="svc" href={serviceUrl(s)}>{inner}</Link>}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
@@ -160,7 +172,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <p className="kicker">{t.stepsKicker}</p>
               <h2>{t.stepsTitle}</h2>
             </div>
-            <ol className="steps">
+            <ol className="book-steps">
               {t.steps.map((s, i) => (
                 <li key={s.t} className="step reveal" style={{ ["--i" as string]: i }}>
                   <span className="step-n">{new Intl.NumberFormat(ur ? "ur-PK-u-nu-arabext" : "en-PK").format(i + 1)}</span>
@@ -222,6 +234,24 @@ export default function HomeView({ lang }: { lang: Lang }) {
           </div>
         </section>
 
+        {/* FAQ (English; the answers are not yet translated) */}
+        {!ur && (
+          <section id="faq" className="section section-mint">
+            <div className="wrap faq-wrap">
+              <div className="sec-head reveal">
+                <p className="kicker">Questions</p>
+                <h2>Frequently asked questions</h2>
+                <p className="muted">
+                  {clinic.name} is a physiotherapy and rehabilitation clinic inside Al Mumtaz Hospital, Darakhshan Society,
+                  Malir, Karachi, led by {clinic.doctor.name}, {clinic.doctor.title}. It is open daily from 11 AM to 11 PM and
+                  appointments are booked on WhatsApp at {clinic.phoneDisplay}.
+                </p>
+              </div>
+              <div className="reveal"><FaqList faqs={homeFaqs} /></div>
+            </div>
+          </section>
+        )}
+
         {/* CONTACT */}
         <section id="contact" className="section contact">
           <div className="contact-bg" aria-hidden="true"><span className="orb orb-1" /><span className="orb orb-2" /></div>
@@ -250,8 +280,17 @@ export default function HomeView({ lang }: { lang: Lang }) {
             <div>
               <strong>{t.footName}</strong>
               <p>{t.footLine}</p>
+              <p><a href={telLink}><Ltr>{clinic.phoneDisplay}</Ltr></a> · {t.factHours}</p>
             </div>
           </div>
+          {!ur && (
+            <nav aria-label="Services" className="foot-svc">
+              <p className="foot-h">Physiotherapy services in Malir, Karachi</p>
+              <ul>
+                {services.map((s) => (<li key={s.slug}><Link href={serviceUrl(s)}>{s.name}</Link></li>))}
+              </ul>
+            </nav>
+          )}
           <p className="foot-note">{t.footNote}</p>
           <p className="foot-copy">© {new Date().getFullYear()} {t.footName} · <a href={t.switchHref} hrefLang={ur ? "en" : "ur"} lang={ur ? "en" : "ur"}>{t.switchLabel}</a></p>
         </div>

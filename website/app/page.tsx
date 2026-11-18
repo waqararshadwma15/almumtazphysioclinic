@@ -1,42 +1,20 @@
+import type { Metadata } from "next";
 import HomeView from "@/components/HomeView";
-import { clinic, services, mapsLink, SITE_URL } from "@/lib/site";
+import { homeFaqs } from "@/lib/faq";
+import { homeGraph, ldJson } from "@/lib/schema";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": ["MedicalClinic", "Physiotherapy"],
-  "@id": `${SITE_URL}/#clinic`,
-  name: clinic.name,
-  description: `${clinic.tagline} inside Al Mumtaz Hospital, Malir, Karachi.`,
-  url: `${SITE_URL}/`,
-  image: `${SITE_URL}/og.jpg`,
-  logo: `${SITE_URL}/icon-512.png`,
-  telephone: clinic.phoneIntl,
-  email: clinic.email,
-  medicalSpecialty: "Physiotherapy",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: `${clinic.address.line1}, ${clinic.address.street}`,
-    addressLocality: `${clinic.address.area}, ${clinic.address.city}`,
-    addressRegion: clinic.address.region,
-    addressCountry: clinic.address.country,
+// hreflang lives here (not in the root layout) so the service pages don't inherit it.
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    languages: { en: "/", ur: "/ur", "x-default": "/" },
   },
-  areaServed: { "@type": "City", name: "Karachi" },
-  hasMap: mapsLink,
-  openingHoursSpecification: [{
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: clinic.hours.opens,
-    closes: clinic.hours.closes,
-  }],
-  availableService: services.map((s) => ({ "@type": "MedicalTherapy", name: s.name })),
-  employee: { "@type": "Person", name: clinic.doctor.name, jobTitle: clinic.doctor.title },
-  sameAs: [clinic.facebook],
 };
 
 export default function Home() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson(homeGraph(homeFaqs)) }} />
       <HomeView lang="en" />
     </>
   );
