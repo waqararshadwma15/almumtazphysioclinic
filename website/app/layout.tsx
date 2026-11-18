@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { SITE_URL, clinic } from "@/lib/site";
 import "./globals.css";
 import "./motion.css";
+import "./theme.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -58,7 +59,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-PK" className={poppins.variable} suppressHydrationWarning>
       <body>
         {/* Lets CSS hide scroll-reveal content only when JavaScript can show it again. */}
-        <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add("js")` }} />
+        {/* Also sets the light/dark theme before first paint (saved choice, else the device setting). */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var d=document.documentElement;d.classList.add("js");var t;try{t=localStorage.getItem("theme")}catch(e){}if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}d.dataset.theme=t;if(t==="dark"){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#08181E")}})()` }} />
         {children}
       </body>
     </html>

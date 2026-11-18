@@ -48,7 +48,14 @@ Set `NEXT_PUBLIC_SITE_URL` in Vercel (or change the fallback in `lib/site.ts`) w
   `pip install fonttools brotli uharfbuzz && python3 tools/urdu_font.py "<path to Jameel Noori Nastaleeq Regular.ttf>"`
   The font is freeware ("Free of charge for Urdu lovers") with no formal web licence; its embedding flag allows view-only embedding.
 
+## Light / dark theme and hero carousel
+- Theme: `app/theme.css` (dark colours under `[data-theme="dark"]`) and `components/ThemeToggle.tsx` (sun/moon button in the header).
+  First visit follows the device setting; the visitor's choice is saved in the browser. A tiny script in `app/layout.tsx` sets the theme before the page paints, so there is no flash.
+- Hero carousel: `components/HeroCarousel.tsx`, photos in `public/hero/` plus `public/hero-treatment.jpg`, list in `components/HomeView.tsx` (`heroSlides`).
+  Only the first photo loads with the page; the rest load after it. Pauses on hover/touch, swipe on phones, no autoplay with "reduce motion".
+
 ## Waiting on the clinic (do not invent)
+- Hero carousel photos are illustrative stock-style images, not the clinic: replace them with real clinic photos (with consent) in `public/hero/`.
 - Urdu medical wording in `lib/i18n.ts` (service names, hero text): to be checked by Dr. Arshad Khan before launch.
 - Service summaries (`lib/site.ts`) and FAQ answers (`lib/faq.ts`): Dr. Arshad to review the wording before launch.
 - Map coordinates: set `clinic.geo` in `lib/site.ts` once the Google Business Profile pin is confirmed.

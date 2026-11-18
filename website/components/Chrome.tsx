@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { WhatsAppIcon, PhoneIcon } from "@/components/Icons";
+import ThemeToggle from "@/components/ThemeToggle";
+import { dict } from "@/lib/i18n";
 import { clinic, services, serviceUrl, waLink, telLink } from "@/lib/site";
 
 export function WaButton({ label = "Book on WhatsApp", service, className = "" }: { label?: string; service?: string; className?: string }) {
@@ -31,6 +33,7 @@ export function Header() {
             <Link href="/#faq">FAQ</Link>
             <Link href="/#contact">Contact</Link>
           </nav>
+          <ThemeToggle labels={dict.en.theme} />
           <a className="lang-switch" href="/ur" hrefLang="ur" lang="ur" aria-label="اردو میں دیکھیں (View in Urdu)">اردو</a>
           <a className="btn btn-wa btn-sm" href={waLink()} target="_blank" rel="noopener" aria-label="Book on WhatsApp">
             <WhatsAppIcon size={18} /> <span>Book</span>
