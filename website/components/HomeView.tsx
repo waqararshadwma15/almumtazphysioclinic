@@ -100,13 +100,16 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <div className="hero-img">
                 <HeroCarousel slides={heroSlides(t)} rtl={ur} labels={t.carousel} />
               </div>
-              <div className="float-card fc-1" aria-hidden="true">
-                <span className="fc-ic"><ClockIcon /></span>
-                <span><strong>{t.badgeOpen}</strong><small>{t.badgeOpenSub}</small></span>
-              </div>
-              <div className="float-card fc-2" aria-hidden="true">
-                <span className="fc-ic fc-ic-o"><HospitalIcon /></span>
-                <span><strong>{t.badgeHosp}</strong><small>{t.badgeHospSub}</small></span>
+              {/* Info cards sit in a strip under the photos, never on top of them. */}
+              <div className="hero-badges">
+                <div className="float-card" aria-hidden="true">
+                  <span className="fc-ic"><ClockIcon /></span>
+                  <span><strong>{t.badgeOpen}</strong><small>{t.badgeOpenSub}</small></span>
+                </div>
+                <div className="float-card" aria-hidden="true">
+                  <span className="fc-ic fc-ic-o"><HospitalIcon /></span>
+                  <span><strong>{t.badgeHosp}</strong><small>{t.badgeHospSub}</small></span>
+                </div>
               </div>
             </div>
           </div>
