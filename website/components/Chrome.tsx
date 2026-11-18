@@ -57,6 +57,7 @@ export function Footer() {
               <p>
                 <a href={telLink}>{clinic.phoneDisplay}</a> · {clinic.hours.label}
               </p>
+              <p className="foot-social"><a href={clinic.instagram} target="_blank" rel="noopener">Instagram</a> · <a href={clinic.facebook} target="_blank" rel="noopener">Facebook</a></p>
             </div>
           </div>
           <nav aria-label="Services" className="foot-svc">
