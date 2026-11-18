@@ -16,15 +16,19 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title,
+  title: { default: title, template: `%s | ${clinic.name}` },
   description,
   applicationName: clinic.name,
   keywords: [
     "physiotherapy Malir", "physiotherapist Karachi", "physiotherapy clinic Karachi",
     "back pain treatment Karachi", "neck pain physiotherapy", "frozen shoulder",
     "knee pain physiotherapy", "stroke rehabilitation Karachi", "cerebral palsy physiotherapy",
-    "Al Mumtaz Hospital Malir",
+    "Al Mumtaz Hospital Malir", "physiotherapy Darakhshan Society", "Kala Board physiotherapy",
+    "physio near me Malir", "tennis elbow treatment Karachi", "facial palsy physiotherapy",
+    "Erb's palsy physiotherapy", "sports injury physiotherapy Karachi",
   ],
+  authors: [{ name: clinic.name }],
+  category: "health",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -38,6 +42,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description, images: ["/og.jpg"] },
   robots: { index: true, follow: true },
   formatDetection: { telephone: true, address: true },
+  other: { "geo.region": "PK-SD", "geo.placename": "Malir, Karachi" },
 };
 
 export const viewport: Viewport = {
@@ -48,7 +53,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en-PK" className={poppins.variable}>
       <body>{children}</body>
     </html>
   );
