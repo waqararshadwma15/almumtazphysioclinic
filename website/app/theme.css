@@ -135,3 +135,20 @@
 @media (max-width: 420px) {
   .hero-badges { grid-template-columns: 1fr; }
 }
+
+/* ---------- Urdu text is never bold ----------
+   Jameel Noori Nastaleeq has only a regular weight; browsers fake a bold by smearing the
+   letters, which looks bad. Everything in Urdu stays at normal weight (here and on the
+   English page's Urdu snippets, e.g. the language switch). English words and numbers inside
+   Urdu pages (phone, email, service subtitles) keep their own weight. Emphasis comes from
+   size and colour instead. */
+:lang(ur), :lang(ur) *:not(.ltr):not(.ltr *):not(:lang(en)):not(:lang(en) *) { font-weight: 400 !important; }
+.page-ur h1 { font-size: clamp(2.05rem, 4.6vw, 3.3rem); }
+.page-ur h2 { font-size: clamp(1.7rem, 3.3vw, 2.35rem); }
+.page-ur h3, .page-ur .svc-txt strong, .page-ur .why strong, .page-ur .info strong, .page-ur .doc-title { font-size: 1.12em; }
+.page-ur .doc-name { font-size: 2rem; }
+.page-ur .stat-n, .page-ur .step-n { font-weight: 400 !important; }
+.page-ur .btn { font-size: 1.12em; }
+.page-ur .btn-lg { font-size: 1.2rem; }
+.page-ur .brand-txt strong { font-size: 1.3rem; }
+.page-ur .kicker { font-size: 1.05rem; }
