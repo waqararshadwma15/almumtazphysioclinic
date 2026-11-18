@@ -8,7 +8,7 @@ Digital marketing and website files for **Al Mumtaz Physiotherapy Clinic** (Phys
 
 | Folder | What is in it |
 |---|---|
-| `website/` | One-page Next.js site (mobile first, English + Urdu). Clinic details live in `website/lib/site.ts`. See `website/README.md`. |
+| `website/` | Next.js site: animated English homepage (`/`), full Urdu page (`/ur`, Jameel Noori Nastaleeq), 12 service pages (`/services/...`), FAQ, schema, sitemap and `/llms.txt`. Clinic details live in `website/lib/site.ts`, page copy in `website/lib/i18n.ts`. See `website/README.md`. |
 | `branding/` | Logo (`clinic-logo.svg`), profile picture, Facebook cover, intro post, poster drafts. Editable HTML sources and images in `branding/source/`. |
 | `content/` | First-month social media content calendar (`first-month-content-calendar.xlsx`). |
 | `reports/` | Project summary PDF (`al-mumtaz-project-summary-2026-11-17.pdf`) and its HTML source. |
