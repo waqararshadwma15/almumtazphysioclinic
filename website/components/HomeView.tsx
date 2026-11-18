@@ -293,6 +293,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <strong>{t.footName}</strong>
               <p>{t.footLine}</p>
               <p><a href={telLink}><Ltr>{clinic.phoneDisplay}</Ltr></a> · {t.factHours}</p>
+              <p className="foot-social"><a href={clinic.instagram} target="_blank" rel="noopener" dir="ltr">Instagram</a> · <a href={clinic.facebook} target="_blank" rel="noopener" dir="ltr">Facebook</a></p>
             </div>
           </div>
           {!ur && (
