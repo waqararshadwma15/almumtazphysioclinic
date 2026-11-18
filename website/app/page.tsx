@@ -1,77 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 import Urdu from "@/components/Urdu";
 import {
   ServiceIcon, WhatsAppIcon, PinIcon, ClockIcon, PhoneIcon, MailIcon,
   HospitalIcon, UserIcon, FamilyIcon, FacebookIcon,
 } from "@/components/Icons";
-import { clinic, services, waLink, telLink, mapsLink, mapsEmbed, SITE_URL } from "@/lib/site";
+import { Header, Footer, WaButton, FaqList } from "@/components/Chrome";
+import { clinic, services, serviceUrl, telLink, mapsLink, mapsEmbed } from "@/lib/site";
+import { homeFaqs } from "@/lib/faq";
+import { homeGraph, ldJson } from "@/lib/schema";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": ["MedicalClinic", "Physiotherapy"],
-  "@id": `${SITE_URL}/#clinic`,
-  name: clinic.name,
-  description: `${clinic.tagline} inside Al Mumtaz Hospital, Malir, Karachi.`,
-  url: `${SITE_URL}/`,
-  image: `${SITE_URL}/og.jpg`,
-  logo: `${SITE_URL}/icon-512.png`,
-  telephone: clinic.phoneIntl,
-  email: clinic.email,
-  medicalSpecialty: "Physiotherapy",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: `${clinic.address.line1}, ${clinic.address.street}`,
-    addressLocality: `${clinic.address.area}, ${clinic.address.city}`,
-    addressRegion: clinic.address.region,
-    addressCountry: clinic.address.country,
-  },
-  areaServed: { "@type": "City", name: "Karachi" },
-  hasMap: mapsLink,
-  openingHoursSpecification: [{
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: clinic.hours.opens,
-    closes: clinic.hours.closes,
-  }],
-  availableService: services.map((s) => ({ "@type": "MedicalTherapy", name: s.name })),
-  employee: { "@type": "Person", name: clinic.doctor.name, jobTitle: clinic.doctor.title },
-  sameAs: [clinic.facebook],
-};
-
-function WaButton({ label = "Book on WhatsApp", service, className = "" }: { label?: string; service?: string; className?: string }) {
-  return (
-    <a className={`btn btn-wa ${className}`} href={waLink(service)} target="_blank" rel="noopener">
-      <WhatsAppIcon /> {label}
-    </a>
-  );
-}
 
 export default function Home() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <a href="#main" className="skip">Skip to content</a>
-
-      <header className="top">
-        <div className="wrap top-in">
-          <a href="#" className="brand">
-            <Image src="/logo.svg" alt="" width={36} height={43} priority unoptimized />
-            <span className="brand-txt">
-              <strong>Al Mumtaz</strong>
-              <span>Physiotherapy Clinic</span>
-            </span>
-          </a>
-          <nav aria-label="Main" className="nav">
-            <a href="#services">Services</a>
-            <a href="#doctor">Doctor</a>
-            <a href="#location">Location</a>
-            <a href="#contact">Contact</a>
-          </nav>
-          <a className="btn btn-wa btn-sm" href={waLink()} target="_blank" rel="noopener" aria-label="Book on WhatsApp">
-            <WhatsAppIcon size={18} /> <span>Book</span>
-          </a>
-        </div>
-      </header>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson(homeGraph(homeFaqs)) }} />
+      <Header />
 
       <main id="main">
         {/* HERO */}
@@ -113,19 +57,19 @@ export default function Home() {
               <p className="kicker">What we treat</p>
               <h2>Our services</h2>
               <Urdu k="treat" height={34} className="sec-ur" />
-              <p className="muted">Tap any service to ask about it on WhatsApp.</p>
+              <p className="muted">Physiotherapy for adults and children in Malir, Karachi. Tap a service to read more and book.</p>
             </div>
             <ul className="grid-services">
               {services.map((s) => (
-                <li key={s.name}>
-                  <a className="svc" href={waLink(s.name)} target="_blank" rel="noopener">
+                <li key={s.slug}>
+                  <Link className="svc" href={serviceUrl(s)}>
                     <span className="svc-ic"><ServiceIcon name={s.icon} /></span>
                     <span className="svc-txt">
                       <strong>{s.name}</strong>
                       <span>{s.roman}</span>
                     </span>
                     <span className="svc-go" aria-hidden="true">→</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -182,6 +126,22 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section id="faq" className="section section-mint">
+          <div className="wrap faq-wrap">
+            <div className="sec-head">
+              <p className="kicker">Questions</p>
+              <h2>Frequently asked questions</h2>
+              <p className="muted">
+                {clinic.name} is a physiotherapy and rehabilitation clinic inside Al Mumtaz Hospital, Darakhshan Society,
+                Malir, Karachi, led by {clinic.doctor.name}, {clinic.doctor.title}. It is open daily from 11 AM to 11 PM and
+                appointments are booked on WhatsApp at {clinic.phoneDisplay}.
+              </p>
+            </div>
+            <FaqList faqs={homeFaqs} />
+          </div>
+        </section>
+
         {/* CONTACT */}
         <section id="contact" className="section contact">
           <div className="wrap contact-in">
@@ -200,27 +160,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="foot">
-        <div className="wrap foot-in">
-          <div className="foot-brand">
-            <Image src="/logo.svg" alt="" width={30} height={36} unoptimized />
-            <div>
-              <strong>{clinic.name}</strong>
-              <p>{clinic.tagline} · {clinic.address.line1}, {clinic.address.area}, {clinic.address.city}</p>
-            </div>
-          </div>
-          <p className="foot-note">
-            Information on this website is general and is not a diagnosis. Please consult the physiotherapist for advice about your condition.
-          </p>
-          <p className="foot-copy">© {new Date().getFullYear()} {clinic.name}</p>
-        </div>
-      </footer>
-
-      {/* Mobile sticky booking bar */}
-      <div className="sticky-bar">
-        <a className="btn btn-wa" href={waLink()} target="_blank" rel="noopener"><WhatsAppIcon /> WhatsApp</a>
-        <a className="btn btn-call" href={telLink}><PhoneIcon /> Call</a>
-      </div>
+      <Footer />
     </>
   );
 }
