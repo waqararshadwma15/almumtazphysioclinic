@@ -31,7 +31,14 @@ npm run build && npm start
   `pip install fonttools uharfbuzz && python3 tools/urdu_svg.py "<path to Jameel Noori Nastaleeq Regular.ttf>" tools/phrases.json app/urdu.json`
 - `tools/make-icons-og.js` regenerates the app icons and `public/og.jpg` share image (needs Playwright).
 
+## Urdu version and animations
+- `/` is English, `/ur` is the full Urdu page (RTL, Noto Nastaliq Urdu, loaded only on `/ur`). Both pages share `components/HomeView.tsx`; all copy is in `lib/i18n.ts`.
+- hreflang alternates (`en`, `ur`, `x-default`) are set in `app/layout.tsx` and `app/ur/page.tsx`, and both URLs are in the sitemap.
+- Animations live in `app/motion.css` and the tiny `components/Motion.tsx` (scroll reveal, count-up, header shadow). All motion stops under the visitor's "reduce motion" setting, and content stays visible without JavaScript.
+- Lighthouse mobile (local): English 94–95 performance, Urdu 87–91 (the Urdu font is ~240 KB); accessibility, best practices and SEO 100 on both.
+
 ## Waiting on the clinic (do not invent)
+- Urdu medical wording in `lib/i18n.ts` (service names, hero text): to be checked by Dr. Arshad Khan before launch.
 - Dr. Arshad Khan's photo (with consent) to replace the "AK" initials, and his qualifications / experience if he wants them shown.
 - Real clinic photos to replace `public/hero-treatment.jpg` (currently an illustrative image, not the clinic).
 - Roman Urdu service names under each service: to be checked by Dr. Arshad.
