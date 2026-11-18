@@ -66,5 +66,5 @@ Edit `source/lines.json`, then in `videos/urdu/source/` run `python3 tts2.py 0.9
 ## Technical notes
 - Files: `01-neck-pain-mobile-urdu.mp4` … `04-frozen-shoulder-urdu.mp4` (1080x1920, 30 fps, 28.5 s, H.264/AAC, about -14 LUFS for Reels/TikTok). English versions are unchanged.
 - Voice: free offline Urdu neural voice (Piper `ur_PK-fasih`, male, MIT licence), slightly brisk (0.95 length) to fit the scenes. It is the only Urdu voice reachable from this environment; there was no female option. Sample: `voice-sample-male.mp3`.
-- Music: the same generated bed as the English reels, automatically ducked under the voice.
+- Music: a slower, softer pad (`source/music_calm.py`) kept low in the gaps and faded about 18 dB down whenever the voice speaks.
 - Captions: Urdu (Noto Nastaliq) in a navy bar under the clinic header, synced to the voice; on the end card it sits under the existing Urdu line.
