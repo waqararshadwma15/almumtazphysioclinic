@@ -121,3 +121,17 @@
 /* "12 hrs" on one line on phones */
 .stat-n { white-space: nowrap; }
 @media (max-width: 760px) { .stat-n { font-size: 2rem; } }
+
+/* ---------- Info cards under the hero photos (no longer floating over them) ---------- */
+.hero-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.hero-badges .float-card {
+  position: static; inset: auto; animation: pop .8s var(--ease-spring) both .7s; min-width: 0;
+  background: rgba(255, 255, 255, .96); box-shadow: 0 10px 26px rgba(6, 29, 37, .22);
+}
+.hero-badges .float-card:nth-child(2) { animation-delay: .9s; }
+[data-theme="dark"] .hero-badges .float-card { background: var(--surface); }
+/* the decorative orange block behind the photo is not needed with the strip */
+.hero-media::after { display: none; }
+@media (max-width: 420px) {
+  .hero-badges { grid-template-columns: 1fr; }
+}
