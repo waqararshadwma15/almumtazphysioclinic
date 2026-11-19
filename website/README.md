@@ -34,7 +34,9 @@ npm run build && npm start
 `SITE_URL` in `lib/site.ts` drives canonical URLs, sitemap, robots, llms.txt, Open Graph and schema.
 Set `NEXT_PUBLIC_SITE_URL` in Vercel (or change the fallback in `lib/site.ts`) when the final name is chosen.
 **Current live address: `https://almumtazphysio.vercel.app`** (confirmed 2026-11-18). It is the fallback in `lib/site.ts`, so nothing needs to be set in Vercel. When a custom domain is bought, change that fallback (or set `NEXT_PUBLIC_SITE_URL` in Vercel) and every canonical URL, hreflang, sitemap, robots, `llms.txt`, Open Graph and schema entry follows.
-Social profiles for the schema (`sameAs`) and the contact section: Facebook and Instagram (`almumtazphysioclinic`), both set in `lib/site.ts`.
+Social profiles for the schema (`sameAs`), the contact section and the footer on every page: Facebook and Instagram (`almumtazphysioclinic`), both set in `lib/site.ts`.
+
+**Google Search Console:** the live address is verified with `public/googlea15be5aff938d444.html` (do not delete it) and `sitemap.xml` is submitted.
 - Urdu text uses Jameel Noori Nastaleeq, pre-shaped into SVG (`app/urdu.json`) because the font file is 10 MB.
   To change Urdu text: edit `tools/phrases.json`, then
   `pip install fonttools uharfbuzz && python3 tools/urdu_svg.py "<path to Jameel Noori Nastaleeq Regular.ttf>" tools/phrases.json app/urdu.json`
