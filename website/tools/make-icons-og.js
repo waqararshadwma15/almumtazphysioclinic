@@ -25,7 +25,7 @@ const u = (k, h, c) => { const p = urdu[k]; const [x,y,w,hh]=p.vb; return `<svg 
    <div style="margin-top:14px">${u('centre',58,'#CFEDEA')}</div>
    <div style="font-size:22px;margin-top:14px;color:#DCEFF0">Dr. Arshad Khan · Consultant Physiotherapist</div>
    <div style="margin-top:26px;display:inline-block;background:#F28C28;color:#0A2A35;font-weight:700;font-size:24px;padding:12px 26px;border-radius:999px">WhatsApp 0333-2156512</div>
-   <div style="font-size:18px;margin-top:18px;color:#CFEDEA">Inside Al Mumtaz Hospital, Malir, Karachi · Daily 11 AM – 11 PM</div>
+   <div style="font-size:18px;margin-top:18px;color:#CFEDEA">Inside Al Mumtaz Hospital, Malir, Karachi · Daily 11 AM – 9 PM</div>
   </div></body></html>`, { waitUntil: 'networkidle' });
   await pg.evaluate(() => document.fonts.ready);
   await pg.screenshot({ path: root + '/public/og.png' });

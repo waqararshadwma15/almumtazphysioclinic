@@ -17,7 +17,7 @@ export function clinicNode() {
     "@id": ids.clinic,
     name: clinic.name,
     alternateName: [clinic.shortName, "Al Mumtaz Physiotherapy"],
-    description: `${clinic.tagline} clinic inside Al Mumtaz Hospital, Darakhshan Society, Malir, Karachi. Open daily 11 AM to 11 PM.`,
+    description: `${clinic.tagline} clinic inside Al Mumtaz Hospital, Darakhshan Society, Malir, Karachi. Open daily 11 AM to 9 PM.`,
     url: `${SITE_URL}/`,
     image: `${SITE_URL}/og.jpg`,
     logo: { "@type": "ImageObject", url: `${SITE_URL}/icon-512.png`, width: 512, height: 512 },

@@ -26,7 +26,7 @@ export const clinic = {
     region: "Sindh",
     country: "PK",
   },
-  hours: { label: "Open daily, 11 AM to 11 PM", opens: "11:00", closes: "23:00" },
+  hours: { label: "Open daily, 11 AM to 9 PM", opens: "11:00", closes: "21:00" },
   // Google Maps lists the building as "Al Mumtaz Medical Complex".
   mapsQuery: "Al Mumtaz Medical Complex, Darakhshan Society, Malir, Karachi",
   // Map coordinates for schema. Left empty until confirmed from the clinic's
