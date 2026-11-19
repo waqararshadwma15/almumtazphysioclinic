@@ -40,7 +40,7 @@ export const dict = {
     h1b: "in Malir, Karachi",
     lead: `${clinic.doctor.name}, ${clinic.doctor.title}. Neck, back, knee and shoulder pain, sports injuries, stroke rehabilitation and children's physiotherapy, open every day.`,
     call: `Call ${clinic.phoneDisplay}`,
-    factHours: "Daily 11 AM – 11 PM",
+    factHours: "Daily 11 AM – 9 PM",
     factArea: "Darakhshan Society, Malir",
     heroAlt: "Physiotherapist supporting a patient's knee during treatment",
     heroAlts: [
@@ -52,7 +52,7 @@ export const dict = {
     ],
     carousel: { region: "Treatment photos", prev: "Previous photo", next: "Next photo", goTo: "Show photo {n}" },
     badgeOpen: "Open every day",
-    badgeOpenSub: "11 AM – 11 PM",
+    badgeOpenSub: "11 AM – 9 PM",
     badgeHosp: "Inside Al Mumtaz Hospital",
     badgeHospSub: "Malir, Karachi",
     stats: [
@@ -82,7 +82,7 @@ export const dict = {
     whyTitle: "Care that is easy to reach",
     why: [
       { t: "Inside a hospital", p: "Located within Al Mumtaz Hospital, Darakhshan Society, Malir." },
-      { t: "Open every day, 11 AM – 11 PM", p: "Daytime, evening or after work, seven days a week." },
+      { t: "Open every day, 11 AM – 9 PM", p: "Daytime, evening or after work, seven days a week." },
       { t: "Consultant Physiotherapist", p: `Your sessions are with ${clinic.doctor.name}.` },
       { t: "Children to adults", p: "From sports injuries and joint pain to stroke rehabilitation and CP in children." },
       { t: "Book on WhatsApp", p: "Send a message and we will confirm your appointment time." },
@@ -127,7 +127,7 @@ export const dict = {
     h1b: "ملیر، کراچی میں",
     lead: "ڈاکٹر ارشد خان، کنسلٹنٹ فزیوتھراپسٹ۔ گردن، کمر، گھٹنے اور کندھے کا درد، کھیل کی چوٹیں، فالج کے بعد بحالی اور بچوں کی فزیوتھراپی، ہفتے کے ساتوں دن۔",
     call: "کال کریں",
-    factHours: "روزانہ صبح ۱۱ بجے سے رات ۱۱ بجے تک",
+    factHours: "روزانہ صبح ۱۱ بجے سے رات ۹ بجے تک",
     factArea: "درخشاں سوسائٹی، ملیر",
     heroAlt: "فزیوتھراپسٹ علاج کے دوران مریض کے گھٹنے کو سہارا دیتے ہوئے",
     heroAlts: [
@@ -139,7 +139,7 @@ export const dict = {
     ],
     carousel: { region: "علاج کی تصاویر", prev: "پچھلی تصویر", next: "اگلی تصویر", goTo: "تصویر {n} دکھائیں" },
     badgeOpen: "ہفتے کے ساتوں دن",
-    badgeOpenSub: "صبح ۱۱ سے رات ۱۱ بجے تک",
+    badgeOpenSub: "صبح ۱۱ سے رات ۹ بجے تک",
     badgeHosp: "الممتاز ہسپتال کے اندر",
     badgeHospSub: "ملیر، کراچی",
     stats: [
@@ -169,7 +169,7 @@ export const dict = {
     whyTitle: "آسان رسائی، بہتر دیکھ بھال",
     why: [
       { t: "ہسپتال کے اندر", p: "الممتاز ہسپتال، درخشاں سوسائٹی، ملیر کے اندر واقع۔" },
-      { t: "روزانہ صبح ۱۱ سے رات ۱۱ بجے تک", p: "دن ہو، شام ہو یا کام کے بعد، ہفتے کے ساتوں دن۔" },
+      { t: "روزانہ صبح ۱۱ سے رات ۹ بجے تک", p: "دن ہو، شام ہو یا کام کے بعد، ہفتے کے ساتوں دن۔" },
       { t: "کنسلٹنٹ فزیوتھراپسٹ", p: "آپ کے سیشن ڈاکٹر ارشد خان کے ساتھ ہوں گے۔" },
       { t: "بچوں سے بڑوں تک", p: "کھیل کی چوٹوں اور جوڑوں کے درد سے لے کر فالج کے بعد بحالی اور بچوں کے سی پی تک۔" },
       { t: "واٹس ایپ پر بکنگ", p: "پیغام بھیجیں، ہم آپ کی اپائنٹمنٹ کا وقت کنفرم کریں گے۔" },
@@ -178,7 +178,7 @@ export const dict = {
     locTitle: "پتہ اور اوقات",
     addrTitle: "الممتاز ہسپتال کے اندر",
     addrLine: "25/243، درخشاں سوسائٹی (کالا بورڈ بس اسٹاپ)، ملیر، کراچی",
-    hoursTitle: "روزانہ صبح ۱۱ بجے سے رات ۱۱ بجے تک",
+    hoursTitle: "روزانہ صبح ۱۱ بجے سے رات ۹ بجے تک",
     hoursSub: "پیر سے اتوار",
     directions: "راستہ دیکھیں",
     mapTitle: "نقشہ: الممتاز فزیوتھراپی کلینک، الممتاز ہسپتال، ملیر",

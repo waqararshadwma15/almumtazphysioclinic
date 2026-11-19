@@ -14,7 +14,7 @@ const poppins = Poppins({
 
 const title = `${clinic.name} | Physiotherapy in Malir, Karachi`;
 const description =
-  "Physiotherapy in Malir, Karachi: back, neck, knee and shoulder pain, stroke and nerve rehab, sports injuries. Inside Al Mumtaz Hospital, Darakhshan Society. Open daily 11 AM to 11 PM. WhatsApp 0333-2156512.";
+  "Physiotherapy in Malir, Karachi: back, neck, knee and shoulder pain, stroke and nerve rehab, sports injuries. Inside Al Mumtaz Hospital, Darakhshan Society. Open daily 11 AM to 9 PM. WhatsApp 0333-2156512.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -16,8 +16,8 @@ export const homeFaqs: Faq[] = [
   },
   {
     q: "What are the clinic timings?",
-    a: "The clinic is open every day, Monday to Sunday, from 11 AM to 11 PM.",
-    roman: "Clinic rozana subah 11 baje se raat 11 baje tak khula hai, Sunday ko bhi.",
+    a: "The clinic is open every day, Monday to Sunday, from 11 AM to 9 PM.",
+    roman: "Clinic rozana subah 11 baje se raat 9 baje tak khula hai, Sunday ko bhi.",
   },
   {
     q: "How do I book an appointment?",
@@ -56,7 +56,7 @@ export function serviceFaqs(s: Service): Faq[] {
   return [
     {
       q: `Is ${t} available in Malir, Karachi?`,
-      a: `Yes. ${clinic.name}, inside Al Mumtaz Hospital, Darakhshan Society, Malir, Karachi, offers ${t}. It is open daily from 11 AM to 11 PM. Book on WhatsApp at ${clinic.phoneDisplay}.`,
+      a: `Yes. ${clinic.name}, inside Al Mumtaz Hospital, Darakhshan Society, Malir, Karachi, offers ${t}. It is open daily from 11 AM to 9 PM. Book on WhatsApp at ${clinic.phoneDisplay}.`,
     },
     {
       q: "How many sessions will I need?",

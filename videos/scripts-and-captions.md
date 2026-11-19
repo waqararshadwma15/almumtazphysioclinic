@@ -5,7 +5,7 @@
 **Format:** 1080x1920 (9:16), 30 fps, ~28.5 s, H.264 MP4. Text sits clear of the Reels/TikTok bottom and right UI.
 **Audio:** A soft, generated background bed is included and is copyright-free. If you'd rather, mute it in the app and add a trending audio track.
 **Structure of every video:** Hook (0–3.8 s) → Explanation with animation (3.8–8.4 s) → 3 tips (4 s each) → When to see a physio (20.4–24 s) → End card (24–28.5 s).
-**End card:** Logo · Al Mumtaz Physiotherapy Clinic · WhatsApp 0333-2156512 · Inside Al Mumtaz Hospital · Daily 11 AM – 11 PM · "General awareness only. Not a diagnosis."
+**End card:** Logo · Al Mumtaz Physiotherapy Clinic · WhatsApp 0333-2156512 · Inside Al Mumtaz Hospital · Daily 11 AM – 9 PM · "General awareness only. Not a diagnosis."
 
 ---
 
@@ -24,7 +24,7 @@
 2️⃣ Har 20–30 minute baad break
 3️⃣ Kandhay dheelay, kamar seedhi
 Dard barqarar rahe ya haathon mein sunn-pan ho to physiotherapist se mashwara karein.
-📲 WhatsApp: 0333-2156512 | 📍 Inside Al Mumtaz Hospital, Malir | 🕚 Daily 11 AM – 11 PM
+📲 WhatsApp: 0333-2156512 | 📍 Inside Al Mumtaz Hospital, Malir | 🕚 Daily 11 AM – 9 PM
 🌐 almumtazphysio.vercel.app
 *Aam maloomat ke liye. Tashkhees ke liye mahir se rujoo karein.*
 **Hashtags:** #NeckPain #GardanDard #TextNeck #Physiotherapy #KarachiPhysio #Malir #AlMumtazPhysiotherapy
@@ -44,7 +44,7 @@ Dard barqarar rahe ya haathon mein sunn-pan ho to physiotherapist se mashwara ka
 2️⃣ Har 30 minute baad uth kar chalein
 3️⃣ Wazan uthate waqt ghutne moden
 Dard tangon tak jaye ya barqarar rahe to physiotherapist se mashwara karein.
-📲 WhatsApp: 0333-2156512 | 📍 Inside Al Mumtaz Hospital, Malir | 🕚 Daily 11 AM – 11 PM
+📲 WhatsApp: 0333-2156512 | 📍 Inside Al Mumtaz Hospital, Malir | 🕚 Daily 11 AM – 9 PM
 🌐 almumtazphysio.vercel.app
 **Hashtags:** #BackPain #KamarDard #Posture #Physiotherapy #KarachiPhysio #Malir #AlMumtazPhysiotherapy
 
@@ -63,7 +63,7 @@ Dard tangon tak jaye ya barqarar rahe to physiotherapist se mashwara karein.
 2️⃣ Roz halki walk
 3️⃣ Sahi exercises physiotherapist se seekhein
 Soojan ho ya chalne mein mushkil, to der na karein.
-📲 WhatsApp: 0333-2156512 | 📍 Inside Al Mumtaz Hospital, Malir | 🕚 Daily 11 AM – 11 PM
+📲 WhatsApp: 0333-2156512 | 📍 Inside Al Mumtaz Hospital, Malir | 🕚 Daily 11 AM – 9 PM
 🌐 almumtazphysio.vercel.app
 **Hashtags:** #KneePain #GhutnonKaDard #JointPain #Physiotherapy #KarachiPhysio #Malir #AlMumtazPhysiotherapy
 
@@ -81,7 +81,7 @@ Soojan ho ya chalne mein mushkil, to der na karein.
 ✅ Dard ko nazar-andaz na karein
 ✅ Zabardasti ki exercise na karein
 ✅ Sahi exercises physiotherapist se seekhein
-📲 WhatsApp: 0333-2156512 | 📍 Inside Al Mumtaz Hospital, Malir | 🕚 Daily 11 AM – 11 PM
+📲 WhatsApp: 0333-2156512 | 📍 Inside Al Mumtaz Hospital, Malir | 🕚 Daily 11 AM – 9 PM
 🌐 almumtazphysio.vercel.app
 **Hashtags:** #FrozenShoulder #ShoulderPain #KandhayKaDard #Physiotherapy #KarachiPhysio #Malir #AlMumtazPhysiotherapy
 

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const s = serviceBySlug((await params).slug);
   if (!s) return {};
   const title = `${s.heading} in Malir, Karachi`;
-  const description = `${s.summary} ${clinic.name}, inside Al Mumtaz Hospital, Malir. ${clinic.doctor.name}. Open daily 11 AM to 11 PM. WhatsApp ${clinic.phoneDisplay}.`;
+  const description = `${s.summary} ${clinic.name}, inside Al Mumtaz Hospital, Malir. ${clinic.doctor.name}. Open daily 11 AM to 9 PM. WhatsApp ${clinic.phoneDisplay}.`;
   return {
     title,
     description,

@@ -124,7 +124,7 @@ function endCard(s) {
       <svg viewBox="0 0 24 24" width="62" height="62"><path fill="#fff" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2 1.1 1 2 1.3 2.3 1.4.3.2.5.1.6 0l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3 0 .2 0 .7-.3 1.2z"/></svg>
       <span>0333-2156512</span></div>
     <div class="endInfo up" ${st(s + 1.2)}>📍 Inside Al Mumtaz Hospital</div>
-    <div class="endInfo up" ${st(s + 1.4)}>🕚 Daily 11 AM – 11 PM</div>
+    <div class="endInfo up" ${st(s + 1.4)}>🕚 Daily 11 AM – 9 PM</div>
     <div class="ur ur-w up" style="animation-delay:${(s + 1.7).toFixed(2)}s;margin-top:18px">اپائنٹمنٹ کے لیے ابھی واٹس ایپ کریں</div>
     <div class="disc up" ${st(s + 2.0)}>General awareness only. Not a diagnosis. Please consult a physiotherapist.</div>
   </section>`;

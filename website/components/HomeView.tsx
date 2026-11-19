@@ -254,7 +254,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
                 <h2>Frequently asked questions</h2>
                 <p className="muted">
                   {clinic.name} is a physiotherapy and rehabilitation clinic inside Al Mumtaz Hospital, Darakhshan Society,
-                  Malir, Karachi, led by {clinic.doctor.name}, {clinic.doctor.title}. It is open daily from 11 AM to 11 PM and
+                  Malir, Karachi, led by {clinic.doctor.name}, {clinic.doctor.title}. It is open daily from 11 AM to 9 PM and
                   appointments are booked on WhatsApp at {clinic.phoneDisplay}.
                 </p>
               </div>
