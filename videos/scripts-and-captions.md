@@ -1,6 +1,6 @@
 # Faceless Reels: Scripts & Captions (Batch 1)
 
-**Status:** Approved by Dr. Arshad Khan (confirmed by Waqar, 18 Nov 2026). Published 18 Nov 2026 as Reels on the Facebook Page and Instagram (@almumtazphysioclinic), with the website line added to each caption.
+**Status:** Approved by Dr. Arshad Khan (confirmed by Waqar, 18 Nov 2026). Published 18 Nov 2026 as Reels on the Facebook Page and Instagram (@almumtazphysioclinic), with the website line added to each caption. **Update:** these English reels were later deleted and replaced by the Urdu voiceover versions in `videos/urdu/`.
 **Website:** https://almumtazphysio.vercel.app
 **Format:** 1080x1920 (9:16), 30 fps, ~28.5 s, H.264 MP4. Text sits clear of the Reels/TikTok bottom and right UI.
 **Audio:** A soft, generated background bed is included and is copyright-free. If you'd rather, mute it in the app and add a trending audio track.

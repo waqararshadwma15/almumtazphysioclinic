@@ -1,6 +1,6 @@
 # Urdu Voiceover Scripts: Reels Batch 1
 
-**Status: DRAFT, awaiting Dr. Arshad Khan's approval. Do not publish the Urdu versions until he signs off.**
+**Status:** Published as Reels on the Facebook Page and Instagram (@almumtazphysioclinic). These Urdu versions replaced the English reels, which were deleted. Final mix = energetic voice over the calm music bed.
 
 Every line below says the same thing as the approved on-screen text of the published English/Roman-Urdu reels. Nothing new has been added: no new medical claims, outcomes or qualifications. The only additions are the spoken connectors ("pehli baat / doosri baat / teesri baat") and the closing line naming the clinic.
 
