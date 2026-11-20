@@ -6,10 +6,11 @@ import ThemeToggle from "@/components/ThemeToggle";
 import HeroCarousel, { type Slide } from "@/components/HeroCarousel";
 import {
   ServiceIcon, WhatsAppIcon, PinIcon, ClockIcon, PhoneIcon, MailIcon,
-  HospitalIcon, UserIcon, FamilyIcon, FacebookIcon, InstagramIcon,
+  HospitalIcon, UserIcon, FamilyIcon, FacebookIcon, InstagramIcon, TikTokIcon,
 } from "@/components/Icons";
 import { FaqList } from "@/components/Chrome";
-import { clinic, services, serviceUrl, telLink, mapsLink, mapsEmbed } from "@/lib/site";
+import VideoGallery from "@/components/VideoCard";
+import { clinic, services, videos, serviceUrl, telLink, mapsLink, mapsEmbed } from "@/lib/site";
 import { homeFaqs } from "@/lib/faq";
 import { dict, waLinkFor, type Lang } from "@/lib/i18n";
 
@@ -67,6 +68,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
         </div>
       </header>
 
+      <div className="scroll-progress" aria-hidden="true" />
       <main id="main">
         {/* HERO */}
         <section className="hero">
@@ -195,10 +197,31 @@ export default function HomeView({ lang }: { lang: Lang }) {
           </div>
         </section>
 
+        {/* VIDEOS */}
+        <section id="videos" className="section section-videos">
+          <div className="wrap">
+            <div className="sec-head reveal">
+              <p className="kicker">{t.videosKicker}</p>
+              <h2>{t.videosTitle}</h2>
+              <p>{t.videosText}</p>
+            </div>
+            <VideoGallery
+              items={videos.map((v) => ({ id: v.id, title: ur ? v.ur : v.en }))}
+              playLabel={t.videosPlay}
+              closeLabel={t.videosClose}
+              prevLabel={t.videosPrev}
+              nextLabel={t.videosNext}
+            />
+            <p className="video-more reveal">
+              <a className="btn btn-outline" href={clinic.tiktok} target="_blank" rel="noopener"><TikTokIcon /> {t.videosMore}</a>
+            </p>
+          </div>
+        </section>
+
         {/* DOCTOR + WHY US */}
         <section id="doctor" className="section section-mint">
           <div className="wrap doc-grid">
-            <div className="doc-card reveal">
+            <div className="doc-card reveal from-start">
               <div className="doc-avatar" aria-hidden="true"><span>{t.docAvatar}</span></div>
               <p className="kicker">{t.docKicker}</p>
               <h2 className="doc-name">{t.docName}</h2>
@@ -207,7 +230,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <a className="btn btn-wa" href={wa()} target="_blank" rel="noopener"><WhatsAppIcon /> {t.docBtn}</a>
             </div>
             <div>
-              <div className="reveal">
+              <div className="reveal from-end">
                 <p className="kicker">{t.whyKicker}</p>
                 <h2>{t.whyTitle}</h2>
               </div>
@@ -229,7 +252,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
         {/* LOCATION */}
         <section id="location" className="section">
           <div className="wrap loc-grid">
-            <div className="reveal">
+            <div className="reveal from-start">
               <p className="kicker">{t.locKicker}</p>
               <h2>{t.locTitle}</h2>
               {!ur && <Urdu k="location" height={30} className="sec-ur" />}
@@ -239,7 +262,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
               </ul>
               <a className="btn btn-outline" href={mapsLink} target="_blank" rel="noopener"><PinIcon /> {t.directions}</a>
             </div>
-            <div className="map reveal" style={{ ["--i" as string]: 1 }}>
+            <div className="map reveal from-end" style={{ ["--i" as string]: 1 }}>
               <iframe title={t.mapTitle} src={mapsEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
             </div>
           </div>
@@ -280,6 +303,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <li><MailIcon /> <a href={`mailto:${clinic.email}`} dir="ltr">{clinic.email}</a></li>
               <li><FacebookIcon /> <a href={clinic.facebook} target="_blank" rel="noopener" dir="ltr">facebook.com/almumtazphysioclinic</a></li>
               <li><InstagramIcon /> <a href={clinic.instagram} target="_blank" rel="noopener" dir="ltr">instagram.com/almumtazphysioclinic</a></li>
+              <li><TikTokIcon /> <a href={clinic.tiktok} target="_blank" rel="noopener" dir="ltr">tiktok.com/@almumtazphysioclinic</a></li>
             </ul>
           </div>
         </section>
@@ -293,7 +317,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <strong>{t.footName}</strong>
               <p>{t.footLine}</p>
               <p><a href={telLink}><Ltr>{clinic.phoneDisplay}</Ltr></a> · {t.factHours}</p>
-              <p className="foot-social"><a href={clinic.instagram} target="_blank" rel="noopener" dir="ltr">Instagram</a> · <a href={clinic.facebook} target="_blank" rel="noopener" dir="ltr">Facebook</a></p>
+              <p className="foot-social"><a href={clinic.instagram} target="_blank" rel="noopener" dir="ltr">Instagram</a> · <a href={clinic.facebook} target="_blank" rel="noopener" dir="ltr">Facebook</a> · <a href={clinic.tiktok} target="_blank" rel="noopener" dir="ltr">TikTok</a></p>
             </div>
           </div>
           {!ur && (
