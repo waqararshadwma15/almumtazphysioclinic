@@ -1,0 +1,124 @@
+{
+ "05-winter-joint-stiffness": {
+  "illo": "knee",
+  "hookImg": "p-knee.jpg",
+  "hookPos": "45% center",
+  "hook": [
+   "Sardi mein",
+   "JORHON",
+   "mein akran?"
+  ],
+  "hookUr": "سردی میں جوڑوں میں اکڑن؟",
+  "explainTag": "Sardi aur jorh",
+  "explain": [
+   "Thand mein hum <b>kam harkat</b> karte hain, is liye jorh <b>akre</b> hue lag sakte hain",
+   "ٹھنڈ میں کم حرکت سے جوڑ اکڑے ہوئے لگ سکتے ہیں",
+   "Moving less in the cold can make joints feel stiff"
+  ],
+  "tips": [
+   {
+    "icon": "🧣",
+    "ru": "Jorhon ko <b>garam</b> kapron se dhaanp kar rakhein",
+    "ur": "جوڑوں کو گرم کپڑوں سے ڈھانپ کر رکھیں",
+    "en": "Keep your joints covered and warm"
+   },
+   {
+    "icon": "🚶",
+    "ru": "Roz <b>halki walk</b> ya harkat jaari rakhein",
+    "ur": "روزانہ ہلکی واک یا حرکت جاری رکھیں",
+    "en": "Keep moving with a gentle daily walk"
+   },
+   {
+    "icon": "🙆",
+    "ru": "Subah <b>halki stretching</b> se din shuru karein",
+    "ur": "صبح ہلکی اسٹریچنگ سے دن شروع کریں",
+    "en": "Start your morning with gentle stretches"
+   }
+  ],
+  "warn": [
+   "Jorh mein <b>soojan</b>, laali ya dard barqarar rahe?",
+   "جوڑ میں سوجن، لالی یا درد برقرار رہے؟",
+   "Physiotherapist se mashwara karein"
+  ]
+ },
+ "06-winter-back-stiffness": {
+  "illo": "back",
+  "hook": [
+   "Sardi ki subah",
+   "KAMAR",
+   "akri hui?"
+  ],
+  "hookUr": "سردی کی صبح کمر اکڑی ہوئی؟",
+  "explainTag": "Ghalat vs Sahi",
+  "explain": [
+   "Kambal mein <b>jhuk kar</b> der tak baithne se kamar par <b>dabao</b> barhta hai",
+   "کمبل میں جھک کر دیر تک بیٹھنے سے کمر پر دباؤ بڑھتا ہے",
+   "Sitting hunched for long under a blanket strains your back"
+  ],
+  "tips": [
+   {
+    "icon": "🛏️",
+    "ru": "Bistar se <b>aahista</b>, karwat le kar uthein",
+    "ur": "بستر سے آہستہ، کروٹ لے کر اٹھیں",
+    "en": "Get out of bed slowly, turning onto your side"
+   },
+   {
+    "icon": "🧥",
+    "ru": "Kamar ko <b>garam</b> rakhein",
+    "ur": "کمر کو گرم رکھیں",
+    "en": "Keep your lower back warm"
+   },
+   {
+    "icon": "🚶",
+    "ru": "Har <b>30 minute</b> baad uth kar chalein",
+    "ur": "ہر تیس منٹ بعد اٹھ کر چلیں",
+    "en": "Get up and move every 30 minutes"
+   }
+  ],
+  "warn": [
+   "Dard <b>tangon</b> tak jaye ya barqarar rahe?",
+   "درد ٹانگوں تک جائے یا برقرار رہے؟",
+   "Physiotherapist se mashwara karein"
+  ]
+ },
+ "07-winter-warm-up": {
+  "illo": "warm",
+  "hook": [
+   "Thand mein exercise?",
+   "WARM-UP",
+   "pehle karein!"
+  ],
+  "hookUr": "ورزش سے پہلے وارم اپ",
+  "explainTag": "Kyun zaroori?",
+  "explain": [
+   "Thand mein <b>pathay</b> akre lag sakte hain, warm-up se jism <b>tayyar</b> hota hai",
+   "ٹھنڈ میں پٹھے اکڑے لگ سکتے ہیں، وارم اپ سے جسم تیار ہوتا ہے",
+   "Muscles can feel tight in the cold; a warm-up gets your body ready"
+  ],
+  "tips": [
+   {
+    "icon": "🚶",
+    "ru": "Pehle <b>5–10 minute</b> aahista chalein",
+    "ur": "پہلے پانچ سے دس منٹ آہستہ چلیں",
+    "en": "Start with 5–10 minutes of slow walking"
+   },
+   {
+    "icon": "🔄",
+    "ru": "Kandhon aur baazuon ko <b>aahista</b> ghumayein",
+    "ur": "کندھوں اور بازوؤں کو آہستہ گھمائیں",
+    "en": "Gently circle your shoulders and arms"
+   },
+   {
+    "icon": "⚡",
+    "ru": "<b>Tez</b> harkat aur jhatkon se bachein",
+    "ur": "تیز حرکت اور جھٹکوں سے بچیں",
+    "en": "Avoid sudden, jerky movements"
+   }
+  ],
+  "warn": [
+   "Exercise ke dauran <b>tez dard</b> ho to ruk jayein",
+   "ورزش کے دوران تیز درد ہو تو رک جائیں",
+   "Physiotherapist se mashwara karein"
+  ]
+ }
+}
