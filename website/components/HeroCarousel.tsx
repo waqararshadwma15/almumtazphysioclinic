@@ -14,7 +14,7 @@ export type Slide = { src: string; alt: string; width: number; height: number; p
  * - No autoplay and no fade under prefers-reduced-motion.
  */
 export default function HeroCarousel({
-  slides, rtl = false, labels, interval = 5000,
+  slides, rtl = false, labels, interval = 3500,
 }: {
   slides: Slide[];
   rtl?: boolean;
@@ -33,7 +33,7 @@ export default function HeroCarousel({
 
   useEffect(() => {
     setReduce(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-    const mount = () => setTimeout(() => setReady(true), 1200);
+    const mount = () => setTimeout(() => setReady(true), 500);
     if (document.readyState === "complete") { const t = mount(); return () => clearTimeout(t); }
     window.addEventListener("load", mount, { once: true });
     return () => window.removeEventListener("load", mount);
@@ -48,7 +48,7 @@ export default function HeroCarousel({
   const pauseBriefly = () => {
     setPaused(true);
     if (resumeTimer.current) clearTimeout(resumeTimer.current);
-    resumeTimer.current = setTimeout(() => setPaused(false), 8000);
+    resumeTimer.current = setTimeout(() => setPaused(false), 4000);
   };
 
   const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; pauseBriefly(); };
@@ -66,7 +66,8 @@ export default function HeroCarousel({
 
   return (
     <div
-      className={`hero-carousel ${reduce ? "no-fade" : ""}`}
+      className={`hero-carousel ${reduce ? "no-fade" : ""} ${paused || !ready ? "is-paused" : ""}`}
+      style={{ ["--hc-int" as string]: `${interval}ms` }}
       role="region"
       aria-roledescription="carousel"
       aria-label={labels.region}

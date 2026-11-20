@@ -296,6 +296,86 @@
   .page-ur .brand-txt span { font-size: .78rem; }
 }
 
+/* ---------- Extra motion (2026-11-20) ---------- */
+/* Side reveals: "start" = the reading side, so RTL mirrors automatically. */
+.js .reveal.from-start:not(.in) { transform: translateX(-48px); }
+.js .reveal.from-end:not(.in) { transform: translateX(48px); }
+[dir="rtl"] .js .reveal.from-start:not(.in), .js [dir="rtl"] .reveal.from-start:not(.in) { transform: translateX(48px); }
+[dir="rtl"] .js .reveal.from-end:not(.in), .js [dir="rtl"] .reveal.from-end:not(.in) { transform: translateX(-48px); }
+/* Cards rise with a slight zoom */
+.js .grid-services .reveal:not(.in), .js .video-row .reveal:not(.in), .js .stat.reveal:not(.in) { transform: translateY(30px) scale(.94); }
+
+/* Section titles: an orange bar draws in under the heading */
+.sec-head h2::after {
+  content: ""; display: block; width: 56px; height: 4px; margin: .35em auto 0; border-radius: 4px;
+  background: linear-gradient(90deg, var(--orange), #F7A247);
+  transform: scaleX(0); transition: transform .9s var(--ease-out) .25s;
+}
+.sec-head.in h2::after, html:not(.js) .sec-head h2::after { transform: scaleX(1); }
+
+/* Reading progress bar (CSS scroll timeline; no JS, hidden where unsupported) */
+.scroll-progress { display: none; }
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: block; position: fixed; z-index: 60; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--leaf, #6DBE45), var(--orange));
+    transform-origin: 0 50%; transform: scaleX(0);
+    animation: grow-x linear both; animation-timeline: scroll(root);
+  }
+  [dir="rtl"] .scroll-progress { transform-origin: 100% 50%; }
+}
+@keyframes grow-x { to { transform: scaleX(1); } }
+
+/* Hero eyebrow: a soft shine passes over it */
+.eyebrow { position: relative; overflow: hidden; }
+.eyebrow::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, .45) 50%, transparent 65%);
+  transform: translateX(-120%); animation: shine 5s ease-in-out 1.4s infinite;
+}
+@keyframes shine { 0% { transform: translateX(-120%); } 30%, 100% { transform: translateX(120%); } }
+
+/* Hero carousel: the active dot fills up as a timer */
+.hc-dots .is-active span { position: relative; overflow: hidden; background: rgba(255, 255, 255, .45); }
+.hc-dots .is-active span::after {
+  content: ""; position: absolute; inset: 0; background: #fff; border-radius: inherit;
+  transform-origin: 0 50%; animation: grow-x var(--hc-int, 3500ms) linear both;
+}
+[dir="rtl"] .hc-dots .is-active span::after { transform-origin: 100% 50%; }
+.hero-carousel.is-paused .hc-dots .is-active span::after { animation-play-state: paused; }
+.no-fade .hc-dots .is-active span::after { animation: none; transform: none; }
+
+/* Stats: lift on hover, number pops when it lands */
+.stat { transition: transform .35s var(--ease-out), box-shadow .35s; }
+.stat:hover { transform: translateY(-5px); box-shadow: var(--glow); }
+
+/* Video cards */
+.video-frame { transition: transform .4s var(--ease-out), box-shadow .4s; }
+.video-card:hover .video-frame { transform: translateY(-6px) rotate(-.6deg); box-shadow: var(--glow); }
+.video-poster img { transition: transform .8s var(--ease-out), filter .4s; }
+.video-poster:hover img { transform: scale(1.05); filter: saturate(1.15); }
+.video-play::before {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(242, 140, 40, .55); animation: play-ring 2.2s ease-out infinite;
+}
+@keyframes play-ring { 70%, 100% { box-shadow: 0 0 0 16px rgba(242, 140, 40, 0); } }
+
+/* Step numbers bounce in when their row appears */
+.js .step.reveal:not(.in) .step-n { transform: scale(.4); }
+.step .step-n { transition: transform .7s var(--ease-spring) calc(var(--i, 0) * 120ms + .15s); }
+
+/* Why-us icons and FAQ rows */
+.faq details { transition: transform .3s var(--ease-out), box-shadow .3s; }
+.faq details:hover { transform: translateY(-2px); }
+.faq details[open] p { animation: up .5s var(--ease-out) both; }
+
+/* Tap feedback on phones */
+.btn:active, .svc:active, .video-poster:active, .hc-arrow:active, .fab-wa:active { transform: scale(.96); transition-duration: .08s; }
+
+/* Gentle floating for the hero info cards */
+.hero-badges .float-card:nth-child(1) { animation: pop .8s var(--ease-spring) both .5s, bob 6s ease-in-out 1.4s infinite; }
+.hero-badges .float-card:nth-child(2) { animation: pop .8s var(--ease-spring) both .7s, bob 7s ease-in-out 1.8s infinite; }
+
 /* ---------- Reduced motion: show everything, animate nothing ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

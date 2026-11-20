@@ -68,6 +68,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
         </div>
       </header>
 
+      <div className="scroll-progress" aria-hidden="true" />
       <main id="main">
         {/* HERO */}
         <section className="hero">
@@ -220,7 +221,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
         {/* DOCTOR + WHY US */}
         <section id="doctor" className="section section-mint">
           <div className="wrap doc-grid">
-            <div className="doc-card reveal">
+            <div className="doc-card reveal from-start">
               <div className="doc-avatar" aria-hidden="true"><span>{t.docAvatar}</span></div>
               <p className="kicker">{t.docKicker}</p>
               <h2 className="doc-name">{t.docName}</h2>
@@ -229,7 +230,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <a className="btn btn-wa" href={wa()} target="_blank" rel="noopener"><WhatsAppIcon /> {t.docBtn}</a>
             </div>
             <div>
-              <div className="reveal">
+              <div className="reveal from-end">
                 <p className="kicker">{t.whyKicker}</p>
                 <h2>{t.whyTitle}</h2>
               </div>
@@ -251,7 +252,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
         {/* LOCATION */}
         <section id="location" className="section">
           <div className="wrap loc-grid">
-            <div className="reveal">
+            <div className="reveal from-start">
               <p className="kicker">{t.locKicker}</p>
               <h2>{t.locTitle}</h2>
               {!ur && <Urdu k="location" height={30} className="sec-ur" />}
@@ -261,7 +262,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
               </ul>
               <a className="btn btn-outline" href={mapsLink} target="_blank" rel="noopener"><PinIcon /> {t.directions}</a>
             </div>
-            <div className="map reveal" style={{ ["--i" as string]: 1 }}>
+            <div className="map reveal from-end" style={{ ["--i" as string]: 1 }}>
               <iframe title={t.mapTitle} src={mapsEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
             </div>
           </div>
