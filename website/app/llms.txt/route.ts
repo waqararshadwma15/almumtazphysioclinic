@@ -20,6 +20,7 @@ export function GET() {
 - Email: ${clinic.email}
 - Facebook: ${clinic.facebook}
 - Instagram: ${clinic.instagram}
+- TikTok: ${clinic.tiktok}
 - Website: ${SITE_URL}/
 - Fees: not published; ask on WhatsApp
 - Languages: English (${SITE_URL}/) and Urdu (${SITE_URL}/ur)

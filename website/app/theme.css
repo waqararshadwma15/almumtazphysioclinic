@@ -152,3 +152,4 @@
 .page-ur .btn-lg { font-size: 1.2rem; }
 .page-ur .brand-txt strong { font-size: 1.3rem; }
 .page-ur .kicker { font-size: 1.05rem; }
+[data-theme="dark"] .video-card figcaption { color: var(--heading); }

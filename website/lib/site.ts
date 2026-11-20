@@ -18,6 +18,7 @@ export const clinic = {
   email: "physioammhospital@gmail.com",
   facebook: "https://www.facebook.com/almumtazphysioclinic",
   instagram: "https://www.instagram.com/almumtazphysioclinic",
+  tiktok: "https://www.tiktok.com/@almumtazphysioclinic",
   address: {
     line1: "Inside Al Mumtaz Hospital",
     street: "25/243, Darakhshan Society (Kala Board Bus Stop)",
@@ -32,9 +33,25 @@ export const clinic = {
   // Map coordinates for schema. Left empty until confirmed from the clinic's
   // own Google Business Profile pin, e.g. { lat: 24.89, lng: 67.19 }.
   geo: null as null | { lat: number; lng: number },
-  // Add TikTok, LinkedIn and Google Business Profile links here when live.
-  sameAs: ["https://www.facebook.com/almumtazphysioclinic", "https://www.instagram.com/almumtazphysioclinic"],
+  // Add LinkedIn and Google Business Profile links here when live.
+  sameAs: [
+    "https://www.facebook.com/almumtazphysioclinic",
+    "https://www.instagram.com/almumtazphysioclinic",
+    "https://www.tiktok.com/@almumtazphysioclinic",
+  ],
 };
+
+/** Short Urdu health-tip reels (also on TikTok, Instagram and Facebook). Web copies in public/videos. */
+export type Video = { id: string; en: string; ur: string };
+export const videos: Video[] = [
+  { id: "01-neck-pain-mobile", en: "Neck pain from mobile use", ur: "گردن کا درد" },
+  { id: "02-back-pain-sitting", en: "Lower back pain from long sitting", ur: "کمر کا درد" },
+  { id: "03-knee-pain-stairs", en: "Knee pain on stairs", ur: "گھٹنوں کا درد" },
+  { id: "04-frozen-shoulder", en: "Frozen shoulder", ur: "فروزن شولڈر" },
+  { id: "05-winter-joint-stiffness", en: "Joint stiffness in winter", ur: "جوڑوں کی اکڑن" },
+  { id: "06-winter-back-stiffness", en: "Morning back stiffness in winter", ur: "کمر کی اکڑن" },
+  { id: "07-winter-warm-up", en: "Warm up before exercise in the cold", ur: "ورزش" },
+];
 
 export const fullAddress = `${clinic.address.line1}, ${clinic.address.street}, ${clinic.address.area}, ${clinic.address.city}`;
 
