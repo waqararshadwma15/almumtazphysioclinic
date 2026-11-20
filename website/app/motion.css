@@ -339,7 +339,7 @@
 .hc-dots .is-active span { position: relative; overflow: hidden; background: rgba(255, 255, 255, .45); }
 .hc-dots .is-active span::after {
   content: ""; position: absolute; inset: 0; background: #fff; border-radius: inherit;
-  transform-origin: 0 50%; animation: grow-x var(--hc-int, 3500ms) linear both;
+  transform-origin: 0 50%; animation: grow-x var(--hc-int, 2000ms) linear both;
 }
 [dir="rtl"] .hc-dots .is-active span::after { transform-origin: 100% 50%; }
 .hero-carousel.is-paused .hc-dots .is-active span::after { animation-play-state: paused; }
@@ -350,8 +350,8 @@
 .stat:hover { transform: translateY(-5px); box-shadow: var(--glow); }
 
 /* Video cards */
-.video-frame { transition: transform .4s var(--ease-out), box-shadow .4s; }
-.video-card:hover .video-frame { transform: translateY(-6px) rotate(-.6deg); box-shadow: var(--glow); }
+.video-poster.video-frame { transition: transform .4s var(--ease-out), box-shadow .4s; }
+.video-card:hover .video-poster.video-frame { transform: translateY(-6px) rotate(-.6deg); box-shadow: var(--glow); }
 .video-poster img { transition: transform .8s var(--ease-out), filter .4s; }
 .video-poster:hover img { transform: scale(1.05); filter: saturate(1.15); }
 .video-play::before {
@@ -394,3 +394,10 @@ body { overflow-x: clip; }
   .hero-media, .hero-img img { animation: none; }
 }
 .page-ur .doc-avatar { font-family: var(--font-poppins), system-ui, sans-serif; }
+
+/* Video modal entrance */
+.video-modal[open] .vm-body { animation: vm-in .45s var(--ease-out) both; }
+.video-modal[open]::backdrop { animation: vm-fade .3s ease both; }
+@keyframes vm-in { from { opacity: 0; transform: translateY(24px) scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes vm-fade { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .video-modal[open] .vm-body, .video-modal[open]::backdrop { animation: none !important; } }

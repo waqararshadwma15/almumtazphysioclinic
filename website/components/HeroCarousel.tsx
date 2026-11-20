@@ -14,7 +14,7 @@ export type Slide = { src: string; alt: string; width: number; height: number; p
  * - No autoplay and no fade under prefers-reduced-motion.
  */
 export default function HeroCarousel({
-  slides, rtl = false, labels, interval = 3500,
+  slides, rtl = false, labels, interval = 2000,
 }: {
   slides: Slide[];
   rtl?: boolean;

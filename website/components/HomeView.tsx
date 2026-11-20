@@ -9,7 +9,7 @@ import {
   HospitalIcon, UserIcon, FamilyIcon, FacebookIcon, InstagramIcon, TikTokIcon,
 } from "@/components/Icons";
 import { FaqList } from "@/components/Chrome";
-import VideoCard from "@/components/VideoCard";
+import VideoGallery from "@/components/VideoCard";
 import { clinic, services, videos, serviceUrl, telLink, mapsLink, mapsEmbed } from "@/lib/site";
 import { homeFaqs } from "@/lib/faq";
 import { dict, waLinkFor, type Lang } from "@/lib/i18n";
@@ -205,13 +205,13 @@ export default function HomeView({ lang }: { lang: Lang }) {
               <h2>{t.videosTitle}</h2>
               <p>{t.videosText}</p>
             </div>
-            <ul className="video-row">
-              {videos.map((v, i) => (
-                <li key={v.id} className="reveal" style={{ ["--i" as string]: i }}>
-                  <VideoCard id={v.id} title={ur ? v.ur : v.en} playLabel={t.videosPlay} />
-                </li>
-              ))}
-            </ul>
+            <VideoGallery
+              items={videos.map((v) => ({ id: v.id, title: ur ? v.ur : v.en }))}
+              playLabel={t.videosPlay}
+              closeLabel={t.videosClose}
+              prevLabel={t.videosPrev}
+              nextLabel={t.videosNext}
+            />
             <p className="video-more reveal">
               <a className="btn btn-outline" href={clinic.tiktok} target="_blank" rel="noopener"><TikTokIcon /> {t.videosMore}</a>
             </p>
